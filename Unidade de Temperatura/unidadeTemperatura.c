@@ -7,6 +7,7 @@
     K  -> ºF => F = ((K - 273.15)*1.8)+32 👍
 */
 // Unidade de temperatura, Jacson Santos(responsável pela cliação do código).
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,9 +26,8 @@ int main(){
     system("chcp 65001");
     while (1)
     {
-    Conversor_Temperatura();
+        Conversor_Temperatura();
     }
-    
     return 0;
 }
 
