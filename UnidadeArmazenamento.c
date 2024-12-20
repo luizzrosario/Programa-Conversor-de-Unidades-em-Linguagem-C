@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-int main() {
+int unidadeArmazenamento() {
     double valor, resultado;
     int unidade_origem, unidade_destino;
 
