@@ -3,7 +3,7 @@
 #include "unidadeTemperatura.h"
 // #include "comprimento.h"
 // #include "massa.h"
-// #include "volume.h"
+#include "volume.h"
 // #include "temperatura.h"
 // #include "velocidade.h"
 // #include "potencia.h"
@@ -39,7 +39,7 @@ void interface() {
 
                 break;
             case 3:
-
+                converterVolume();
                 break;
             case 4:
                 Conversor_Temperatura();
