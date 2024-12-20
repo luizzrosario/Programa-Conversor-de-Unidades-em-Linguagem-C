@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 void unidades_de_comprimento();
+void validar_entrada(char frase[], int *unidade);
 
 // função main temporária para testar o código
 int main() {
@@ -10,9 +11,8 @@ int main() {
 }
 
 // função principal que ficará no arquivo após finalização 
-void unidades_de_comprimento() {
-    char linha [256];
-    int opcao_usuario;
+void unidades_de_comprimento() {   
+    int unidade_atual, unidade_final;
     printf("\n########## Conversao de unidades de comprimento ##########\n");
     printf("1. Quilometro (km)\n"
            "2. Hectometro (hm)\n"
@@ -22,21 +22,31 @@ void unidades_de_comprimento() {
            "6. Centimetro (dm)\n"
            "7. Milimetro (mm)\n"
            "8. Voltar ao menu principal\n");   
+   
+    validar_entrada("Digite o numero da unidade atual: ", &unidade_atual);
+    if (unidade_atual == 8) {
+        return;
+    }
+    
+    validar_entrada("Digite o numero da unidade final: ", &unidade_final);    
+    if (unidade_final == 8) {
+        return;
+    }
+}
+
+void validar_entrada(char frase[], int *unidade) {
+    char linha [256];
     do {
-        printf("Digite o numero corresponde da unidade que sera convertida: ");
+        printf("%s", frase);
         if (fgets(linha, sizeof(linha), stdin)) {
-            if (1 == sscanf(linha, "%d", &opcao_usuario)) {
-                if (opcao_usuario >= 1 && opcao_usuario <= 7) {
-                    break;
-                } else if (opcao_usuario == 8) {
+            if (1 == sscanf(linha, "%d", unidade)) {
+                if (*unidade >= 1 && *unidade <= 8) {
                     return;
-                }
+                }                
             }
         }
        
         printf("Opcao invalida!\n");
 
-    } while (1);
-         
-
+    } while (1); 
 }
