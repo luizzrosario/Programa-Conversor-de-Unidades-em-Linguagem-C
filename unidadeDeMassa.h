@@ -9,6 +9,7 @@
 #define CODIGO_TONELADA 3
 
 // declaração das funções
+void conversorMassa();
 float conversor_unidade_massa(int unidade_atual, int unidade_escolhida,
                               float valor_atual);
 int codigo_de_unidade_de_medida_valido(int codigo);
@@ -21,8 +22,9 @@ float converter_quilograma_para_tonelada(float valor_quilograma);
 float converter_tonelada_para_grama(float valor_tonelada);
 float converter_tonelada_para_quilograma(float valor_quilograma);
 
-int main() {
+void conversorMassa() {
 
+  // declaração das variaveis
   int unidade_atual, unidade_escolhida, sair;
   float valor_atual, valor_convertido;
 
@@ -53,6 +55,7 @@ int main() {
       continue;
     }
 
+    // obtendo o valor convertido
     valor_convertido =
         conversor_unidade_massa(unidade_atual, unidade_escolhida, valor_atual);
 
@@ -62,8 +65,6 @@ int main() {
     scanf("%d", &sair);
 
   } while (sair != 1);
-
-  return 0;
 }
 
 // função para verificar se o usuário digitou um código valido
