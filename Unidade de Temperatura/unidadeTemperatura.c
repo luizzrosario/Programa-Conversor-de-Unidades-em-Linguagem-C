@@ -23,13 +23,6 @@ double Kelvin_para_Fahrenheit(double k);
 
 char *conversoes[] = {"Celsius para Fahrenheit", "Fahrenheit para Celsius", "Celsius para Kelvin", "Kelvin para Celsius", "Fahrenheit para Kelvin", "Kelvin para Fahrenheit", "Celsius para Fahrenheit e Kelvin", "Fahrenheit para Celsius e Kelvin", "Kelvin para Celsius e  Fahrenheit"};
 
-int main()
-{
-    system("chcp 65001");
-    Conversor_Temperatura();
-    return 0;
-}
-
 // Função principal do conversor, basta chama-la na função main (Não esqueça de adicionar 'system("chcp 65001");')
 void Conversor_Temperatura()
 {
@@ -38,6 +31,7 @@ void Conversor_Temperatura()
         double a_converter;
 
         printf("\nEscolha a conversão desejada.");
+        // for responsável por exibir as opções para o úsuário
         for (size_t i = 0; i < sizeof(conversoes) / sizeof(conversoes[0]); i++)
         {
             printf("\n\t %d => %s", (i + 1), conversoes[i]);
