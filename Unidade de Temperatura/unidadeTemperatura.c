@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 int Conversor_Temperatura();
 char* Resultado_conversao(int conversao, double a_converter);
 double Celsius_para_Fahrenheit(double c);
@@ -20,12 +21,12 @@ double Celsius_para_Kelvin(double c);
 double Kelvin_para_Celsius(double k);
 double Fahrenheit_para_Kelvin(double f);
 double Kelvin_para_Fahrenheit(double k);
+
 char *conversoes[] = {"Celsius para Fahrenheit", "Fahrenheit para Celsius", "Celsius para Kelvin", "Kelvin para Celsius", "Fahrenheit para Kelvin", "Kelvin para Fahrenheit", "Celsius para Fahrenheit e Kelvin", "Fahrenheit para Celsius e Kelvin","Kelvin para Celsius e  Fahrenheit"};
 
 int main(){
     system("chcp 65001");
-    while (1)
-    {
+    while (1){
         Conversor_Temperatura();
     }
     return 0;
@@ -45,11 +46,11 @@ int Conversor_Temperatura(){
     printf("Digite valor do grau a converter: ");
     scanf("%lf",&valor_converter);
     char *resultado = Resultado_conversao(conversao,valor_converter);
-    if (resultado == NULL || strlen(resultado) == 0){
-        printf("erro!");
-        return 0;
+    printf("%lf",&resultado);
+    if (resultado == NULL || strlen(resultado) == 0 || resultado == ""){
+        printf("Houve um erro!\n");
     }
-    printf("\n%s",resultado);
+    printf("\n%s\n",resultado);
 }
 
 char* Resultado_conversao(int conversao, double a_converter) {
@@ -57,7 +58,7 @@ char* Resultado_conversao(int conversao, double a_converter) {
     char* texto_saida = malloc(200);
     if (!texto_saida) {
         perror("Erro ao alocar memória");
-        return 0; // Retorna NULL em caso de erro
+        return NULL;  // Retorna NULL em caso de erro
     }
     // Monta a mensagem inicial
     snprintf(texto_saida, 200, "A conversao de '%s' é igual a: ", conversoes[conversao - 1]);
@@ -95,12 +96,13 @@ char* Resultado_conversao(int conversao, double a_converter) {
             snprintf(pos_atual, restante, "%.2f ºC e %.2f ºF", Kelvin_para_Celsius(a_converter), Kelvin_para_Fahrenheit(a_converter));
             break;
         default:
-            free(texto_saida); // Libera a memória em caso de erro
-            return 0;
+            snprintf(texto_saida, 2, "");
+            return NULL;
     }
     // Retorna o ponteiro para a string
     return texto_saida;
 }
+
 double Celsius_para_Fahrenheit(double c){
     double f = (c * 1.8)+32;
     return f;
