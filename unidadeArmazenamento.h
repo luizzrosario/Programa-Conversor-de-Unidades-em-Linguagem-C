@@ -10,7 +10,8 @@
 
 char *getUnidade(int unidade);
 
-int UnidadeArmazenamento() {             // Funcao a ser chamada no main para a execucao do programa
+void unidadeArmazenamento() {
+    
     double valorUsuario, valor, resultado;
     int unidade_origem, unidade_destino;
 
@@ -61,7 +62,7 @@ int UnidadeArmazenamento() {             // Funcao a ser chamada no main para a 
             break;
         default:
             printf("Unidade de origem inválida.\n");
-            return 1;
+            return;
     }
 
     // Logica para a conversao do valor da unidade de origem para a unidade de destino
@@ -87,13 +88,11 @@ int UnidadeArmazenamento() {             // Funcao a ser chamada no main para a 
             break;
         default:
             printf("Unidade de destino inválida.\n");
-            return 1;
+            return;
     }
 
     printf("O valor %lf %s corresponde em = %lf %s\n", valorUsuario, getUnidade(unidade_origem), resultado, getUnidade(unidade_destino));             // Imprime o resultado da conversao
-
-    return 0;
-}
+ }
 
 char* getUnidade(int unidade) {
     switch (unidade) {
