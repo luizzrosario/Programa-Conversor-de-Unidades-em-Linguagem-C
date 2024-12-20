@@ -3,8 +3,8 @@
 #include "unidadeTemperatura.h"
 #include "unidadeArmazenamento.h"
 #include "volume.h"
+#include "unidadeDeMassa.h"
 // #include "comprimento.h"
-// #include "massa.h"
 // #include "velocidade.h"
 // #include "potencia.h"
 // #include "area.h"
@@ -26,7 +26,6 @@ void interface() {
         printf("7. Unidades de área\n");
         printf("8. Unidades de tempo\n");
         printf("9. Unidades de dados\n");
-        printf("10. Testes e depuração\n");
         printf("0. Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &escolha);
@@ -36,7 +35,7 @@ void interface() {
                 
                 break;
             case 2:
-
+                conversorMassa();
                 break;
             case 3:
                 converterVolume();
