@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <locale.h>
 #include "unidadeTemperatura.h"
+#include "unidadeArmazenamento.h"
 // #include "comprimento.h"
 // #include "massa.h"
 // #include "volume.h"
-// #include "temperatura.h"
 // #include "velocidade.h"
 // #include "potencia.h"
 // #include "area.h"
@@ -57,7 +57,7 @@ void interface() {
 
                 break;
             case 9:
-
+                unidadeArmazenamento();
                 break;
             case 10:
 
