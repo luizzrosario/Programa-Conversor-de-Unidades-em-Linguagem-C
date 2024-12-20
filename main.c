@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <locale.h>
+#include "unidadeTemperatura.h"
 // #include "comprimento.h"
 // #include "massa.h"
 // #include "volume.h"
@@ -31,34 +33,34 @@ void interface() {
 
         switch (escolha) {
             case 1:
-                converterComprimento();
+                
                 break;
             case 2:
-                converterMassa();
+
                 break;
             case 3:
-                converterVolume();
+
                 break;
             case 4:
-                converterTemperatura();
+                Conversor_Temperatura();
                 break;
             case 5:
-                converterVelocidade();
+
                 break;
             case 6:
-                converterPotencia();
+
                 break;
             case 7:
-                converterArea();
+
                 break;
             case 8:
-                converterTempo();
+
                 break;
             case 9:
-                converterDados();
+
                 break;
             case 10:
-                executarTestes();
+
                 break;
             case 0:
                 printf("Saindo do programa...\n");
@@ -70,6 +72,7 @@ void interface() {
 }
 
 int main() {
+    setlocale(LC_ALL, "");
     interface();
     return 0;
 }
