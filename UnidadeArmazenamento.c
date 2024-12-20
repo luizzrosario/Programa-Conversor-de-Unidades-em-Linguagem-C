@@ -10,12 +10,14 @@
 
 char *getUnidade(int unidade);
 
-int main() {
-    double valor, resultado;
+int UnidadeArmazenamento() {             // Funcao a ser chamada no main para a execucao do programa
+    double valorUsuario, valor, resultado;
     int unidade_origem, unidade_destino;
 
     printf("Digite o valor a ser convertido: ");
-    scanf("%lf", &valor);
+    scanf("%lf", &valorUsuario);
+
+    valor = valorUsuario;
 
     printf("Escolha a unidade de origem:\n");
     printf("1. Bits\n");
@@ -40,22 +42,22 @@ int main() {
 
     switch (unidade_origem) {
         case 1: // Bits
-            valor /= 8; 
+            valor /= 8;
             break;
         case 2: // Bytes
-            valor *= 1;
+            valor *= 1000;
             break;
         case 3: // Kilobytes
-            valor *= 1024; //
+            valor *= 1024;
             break;
         case 4: // Megabytes
-            valor *= 1024 * 1024;
+            valor *= pow(1024, 2);
             break;
         case 5: // Gigabytes
-            valor *= 1024 * 1024 * 1024; 
+            valor *= pow(1024, 3); 
             break;
         case 6: // Terabytes
-            valor *= 1024 * 1024 * 1024 * 1024;
+            valor *= pow(1024, 4);
             break;
         default:
             printf("Unidade de origem inválida.\n");
@@ -69,26 +71,26 @@ int main() {
             resultado = valor * 8;
             break;
         case 2: // Bytes
-            resultado = valor * 1;
+            resultado = valor * 1000;
             break;
         case 3: // Kilobytes
             resultado = valor / 1024;
             break;
         case 4: // Megabytes
-            resultado = valor / (1024 * 1024);
+            resultado = valor / pow(1024, 2);
             break;
         case 5: // Gigabytes
-            resultado = valor / (1024 * 1024 * 1024);
+            resultado = valor / pow(1024, 3);
             break;
         case 6: // Terabytes
-            resultado = valor / (1024 * 1024 * 1024 * 1024);
+            resultado = valor / pow(1024, 4);
             break;
         default:
             printf("Unidade de destino inválida.\n");
             return 1;
     }
 
-    printf("%.2lf %s = %.2lf %s\n", valor, getUnidade(unidade_origem), resultado, getUnidade(unidade_destino));             // Imprime o resultado da conversao
+    printf("O valor %lf %s corresponde em = %lf %s\n", valorUsuario, getUnidade(unidade_origem), resultado, getUnidade(unidade_destino));             // Imprime o resultado da conversao
 
     return 0;
 }
@@ -96,11 +98,11 @@ int main() {
 char* getUnidade(int unidade) {
     switch (unidade) {
         case 1: return "bits";
-        case 2: return "bytes";
-        case 3: return "kilobytes";
-        case 4: return "megabytes";                             // Funcao para retornar a unidade de armazenamento
-        case 5: return "gigabytes";
-        case 6: return "terabytes";
+        case 2: return "Bytes";
+        case 3: return "Kilobytes";
+        case 4: return "Megabytes";                             // Funcao para retornar a unidade de armazenamento
+        case 5: return "Gigabytes";
+        case 6: return "Terabytes";
         default: return "inválida";
     }
 }
