@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <locale.h>
 #include "unidadeTemperatura.h"
 #include "unidadeArmazenamento.h"
 #include "volume.h"
@@ -71,7 +70,7 @@ void interface() {
 }
 
 int main() {
-    setlocale(LC_ALL, "");
+    system("chcp 65001");
     interface();
     return 0;
 }
