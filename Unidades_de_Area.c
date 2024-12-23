@@ -28,29 +28,31 @@ const double ANO_LUZ_QUADRADO = 8.9510521e31;     // 1 AN² para m² = (9,461e+1
 
 // --------------------------Protótipo da função-------------------------------
 void Conversor_De_Area() {
+    char continuar;
 
 do {
-    double valor;
+    double valor, valorEmMetros = 0.0, valorConvertido = 0.0;
     int unidadeAntes, unidadeConvertida;
+    const char* unidadeConvertidaStr = "";                     // adicionando ponteiro para armazenar a unidade de medida a cada valor convertido
 
-    // Exibe as opções de unidades
-    printf("Bem-vindo ao Conversor de Unidades de Área!\n");
-    printf("Escolha uma das opções abaixo:\n");
-    printf("1. Metro Quadrado (m²)\n");
-    printf("2. Centímetro Quadrado (cm²)\n");
-    printf("3. Quilômetro Quadrado (km²)\n");
-    printf("4. Hectare (ha)\n");
-    printf("5. Decâmetro Quadrado (dam²)\n");
-    printf("6. Milímetro Quadrado (mm²)\n");
-    printf("7. Polegada Quadrada (in²)\n");
-    printf("8. Pé Quadrado (ft²)\n");
-    printf("9. Jarda Quadrada (yd²)\n");
-    printf("10. Milha Quadrada (mi²)\n");
-    printf("11. Acre (ac)\n");
-    printf("12. Unidade Astronômica (UA²)\n");
-    printf("13. Parsec Quadrado \n");
-    printf("14. Ano Luz Quadrado \n");
-
+    // Exibe as opções de unidades do menu
+    printf("\nBem-vindo ao Conversor de Unidades de Área!\n");
+        printf("Escolha uma das opções abaixo:\n");
+        printf("1. Metro Quadrado (m²)\n");
+        printf("2. Centímetro Quadrado (cm²)\n");
+        printf("3. Quilômetro Quadrado (km²)\n");
+        printf("4. Hectare (ha)\n");
+        printf("5. Decâmetro Quadrado (dam²)\n");
+        printf("6. Milímetro Quadrado (mm²)\n");
+        printf("7. Polegada Quadrada (in²)\n");
+        printf("8. Pé Quadrado (ft²)\n");
+        printf("9. Jarda Quadrada (yd²)\n");
+        printf("10. Milha Quadrada (mi²)\n");
+        printf("11. Acre (ac)\n");
+        printf("12. Unidade Astronômica (UA²)\n");
+        printf("13. Parsec Quadrado\n");
+        printf("14. Ano Luz Quadrado\n");
+        
     // Entrada do usuário
     printf("\nDigite o valor da área a ser convertida: ");
     scanf("%lf", &valor);
@@ -61,16 +63,7 @@ do {
     printf("Escolha a unidade de destino (1-14): ");
     scanf("%d", &unidadeConvertida);
 
-    // Chama a função de conversão
-    conversorDeArea(valor, unidadeAntes, unidadeConvertida);
-
-    return 0;
-} }
-
-
 //----------Fazendo a conversão para metros quadrados------------------
-
- double valorEmMetros = 0.0;
 
     switch (unidadeAntes) {
         case 1: valorEmMetros = valor * METRO_QUADRADO; break;
@@ -89,31 +82,72 @@ do {
         case 14: valorEmMetros = valor * ANO_LUZ_QUADRADO; break;
         default:
             printf("Unidade de origem inválida.\n");
-            return;
+            continue; // faz com que o programa pule o resto das instruções do-while
     }
 
 
 // ----------Fazendo a conversão para a unidade desejada---------------
 
-    double valorConvertido = 0.0;
     switch (unidadeConvertida) {
-        case 1: valorConvertido = valorEmMetros / METRO_QUADRADO; break;
-        case 2: valorConvertido = valorEmMetros / CENTIMETRO_QUADRADO; break;
-        case 3: valorConvertido = valorEmMetros / KILOMETRO_QUADRADO; break;
-        case 4: valorConvertido = valorEmMetros / HECTARE; break;
-        case 5: valorConvertido = valorEmMetros / DECAMETRO_QUADRADO; break;
-        case 6: valorConvertido = valorEmMetros / MILIMETRO_QUADRADO; break;
-        case 7: valorConvertido = valorEmMetros / POLEGADA_QUADRADA; break;
-        case 8: valorConvertido = valorEmMetros / PES_QUADRADOS; break;
-        case 9: valorConvertido = valorEmMetros / JARDA_QUADRADA; break;
-        case 10: valorConvertido = valorEmMetros / MILHA_QUADRADA; break;
-        case 11: valorConvertido = valorEmMetros / ACRES; break;
-        case 12: valorConvertido = valorEmMetros / UNIDADE_ASTRONOMICA; break; 
-        case 13: valorConvertido = valorEmMetros / PARSEC_QUADRADO; break;
-        case 14: valorConvertido = valorEmMetros / ANO_LUZ_QUADRADO; break;
+        case 1: valorConvertido = valorEmMetros / METRO_QUADRADO; 
+        unidadeConvertidaStr = "m²"; 
+        break;
+
+        case 2: valorConvertido = valorEmMetros / CENTIMETRO_QUADRADO; 
+        unidadeConvertidaStr = "cm²";
+        break;
+
+        case 3: valorConvertido = valorEmMetros / KILOMETRO_QUADRADO; 
+        unidadeConvertidaStr = "km²";
+        break;
+
+        case 4: valorConvertido = valorEmMetros / HECTARE; 
+        unidadeConvertidaStr = "ha";
+        break;
+
+        case 5: valorConvertido = valorEmMetros / DECAMETRO_QUADRADO; 
+        unidadeConvertidaStr = "dam";
+        break;
+
+        case 6: valorConvertido = valorEmMetros / MILIMETRO_QUADRADO; 
+        unidadeConvertidaStr = "mm";
+        break;
+
+        case 7: valorConvertido = valorEmMetros / POLEGADA_QUADRADA; 
+        unidadeConvertidaStr = "in²";
+        break;
+
+        case 8: valorConvertido = valorEmMetros / PES_QUADRADOS; 
+        unidadeConvertidaStr = "ft²";
+        break;
+
+        case 9: valorConvertido = valorEmMetros / JARDA_QUADRADA; 
+        unidadeConvertidaStr = "yd²";
+        break;
+
+        case 10: valorConvertido = valorEmMetros / MILHA_QUADRADA; 
+        unidadeConvertidaStr = "mi²";
+        break;
+
+        case 11: valorConvertido = valorEmMetros / ACRES; 
+        unidadeConvertidaStr = "ac";
+        break;
+
+        case 12: valorConvertido = valorEmMetros / UNIDADE_ASTRONOMICA; 
+        unidadeConvertidaStr = "UA²";
+        break; 
+
+        case 13: valorConvertido = valorEmMetros / PARSEC_QUADRADO; 
+        unidadeConvertidaStr = "pc²";
+        break;
+
+        case 14: valorConvertido = valorEmMetros / ANO_LUZ_QUADRADO; 
+        unidadeConvertidaStr = "ly²";
+        break;  
+
 
 
         default:
             printf("Unidade de destino inválida.\n");
-            return;
+            continue; // caso seja colocada um digito inválido imediatamente retorna ao início do loop para que o usuário tente novamente
     }
