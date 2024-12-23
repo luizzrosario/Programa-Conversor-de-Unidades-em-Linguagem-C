@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include <stdlib.h>
-#include <string.h>
+
 
 
 // -------------Declaração das variáveis-------------------
@@ -145,9 +144,27 @@ do {
         unidadeConvertidaStr = "ly²";
         break;  
 
-
-
         default:
             printf("Unidade de destino inválida.\n");
             continue; // caso seja colocada um digito inválido imediatamente retorna ao início do loop para que o usuário tente novamente
     }
+
+    //-----------Exibindo o resultado convertido com a unidade----------
+
+    printf("\nO valor convertido é: %.10lf %s\n", valorConvertido, unidadeConvertidaStr);
+
+    // Opção se o usuario deseja fazer outra conversão
+    printf("\nDeseja realizar outra conversão? (s/n): ");
+    scanf(" %c", &continuar);
+
+} while (continuar == 's' || continuar =='S');
+
+printf("\nPrograma encerrado. O conversor de Unidades de Área está a sua disposição!\n");
+}
+
+int main(){
+    Conversor_De_Area();
+    return 0;
+}
+
+
