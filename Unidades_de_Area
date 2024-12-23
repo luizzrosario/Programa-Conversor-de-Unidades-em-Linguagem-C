@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+// -------------Declaração das variáveis-------------------
+
+void Conversor_Unidade_de_Area();
+char *Resultado_conversao(int conversao, double sera_convertido)
+const double METRO_QUADRADO = 1.0;              // Unidade de medida base
+const double CENTIMETRO_QUADRADO = 0.0001;      // 1 cm² para m² = 1 * (10-²)^2= 0.0001 m²
+const double KILOMETRO_QUADRADO = 1000000.0;    // 1 km² para  m² = (1*10^3)^2 = 1000000 m²
+const double HECTARE = 10000.0;                 // 1 ha para m² = 10000 m²
+const double DECAMETRO_QUADRADO = 100.0;        // 1 dam para m² = (1*10)^2 = 100 m² 
+const double MILIMETRO_QUADRADO = 0.000001;     // 1 mm² para m² = (1*10^3)^2 = 0.000001 m²
+const double POLEGADA_QUADRADA = 0.00064516;    // 1 in^2 para m² = (0,0254)^2 = 0.00064516 m²
+const double PES_QUADRADOS = 0.092903;          // 1 ft^2 para m² = (0,3048)^2 = 0.092903 m²
+const double JARDA_QUADRADA = 0.836127;         // 1 yd^2 para m² = (0,9144)^2 = 0,836127 m²
+const double MILHA_QUADRADA = 2589988.11;       // 1 mi² para m² = (1609,34)^2 = 2.589.988,11 m²
+const double ACRES = 4046.86;                   // 1 acre para m² = 4046.86 m²
+const double UNIDADE_ASTRONOMICA = 2.238016*10^22;// 1 UA² para m² = (1,496e+11)^2 = 2.238016e+22 m²
+const double PARSEC_QUADRADO = 9.523396*10^32
+const double ANO_LUZ_QUADRADO = 8.9510521*10^31   // 1 AN² para m² = (9,461e+15)^2 = 8,9510521e+31 m²
+
