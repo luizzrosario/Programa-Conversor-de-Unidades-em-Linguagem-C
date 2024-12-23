@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <math.h>
 
-
-
 // -------------Declaração das variáveis-------------------
 
 void Conversor_de_Area();
@@ -88,61 +86,33 @@ do {
 // ----------Fazendo a conversão para a unidade desejada---------------
 
     switch (unidadeConvertida) {
-        case 1: valorConvertido = valorEmMetros / METRO_QUADRADO; 
-        unidadeConvertidaStr = "m²"; 
-        break;
+        case 1: valorConvertido = valorEmMetros / METRO_QUADRADO; unidadeConvertidaStr = "m²"; break;
 
-        case 2: valorConvertido = valorEmMetros / CENTIMETRO_QUADRADO; 
-        unidadeConvertidaStr = "cm²";
-        break;
+        case 2: valorConvertido = valorEmMetros / CENTIMETRO_QUADRADO; unidadeConvertidaStr = "cm²"; break;
 
-        case 3: valorConvertido = valorEmMetros / KILOMETRO_QUADRADO; 
-        unidadeConvertidaStr = "km²";
-        break;
+        case 3: valorConvertido = valorEmMetros / KILOMETRO_QUADRADO; unidadeConvertidaStr = "km²"; break;
 
-        case 4: valorConvertido = valorEmMetros / HECTARE; 
-        unidadeConvertidaStr = "ha";
-        break;
+        case 4: valorConvertido = valorEmMetros / HECTARE; unidadeConvertidaStr = "ha"; break;
 
-        case 5: valorConvertido = valorEmMetros / DECAMETRO_QUADRADO; 
-        unidadeConvertidaStr = "dam";
-        break;
+        case 5: valorConvertido = valorEmMetros / DECAMETRO_QUADRADO; unidadeConvertidaStr = "dam"; break;
 
-        case 6: valorConvertido = valorEmMetros / MILIMETRO_QUADRADO; 
-        unidadeConvertidaStr = "mm";
-        break;
+        case 6: valorConvertido = valorEmMetros / MILIMETRO_QUADRADO; unidadeConvertidaStr = "mm"; break;
 
-        case 7: valorConvertido = valorEmMetros / POLEGADA_QUADRADA; 
-        unidadeConvertidaStr = "in²";
-        break;
+        case 7: valorConvertido = valorEmMetros / POLEGADA_QUADRADA; unidadeConvertidaStr = "in²"; break;
 
-        case 8: valorConvertido = valorEmMetros / PES_QUADRADOS; 
-        unidadeConvertidaStr = "ft²";
-        break;
+        case 8: valorConvertido = valorEmMetros / PES_QUADRADOS; unidadeConvertidaStr = "ft²"; break;
 
-        case 9: valorConvertido = valorEmMetros / JARDA_QUADRADA; 
-        unidadeConvertidaStr = "yd²";
-        break;
+        case 9: valorConvertido = valorEmMetros / JARDA_QUADRADA; unidadeConvertidaStr = "yd²"; break;
 
-        case 10: valorConvertido = valorEmMetros / MILHA_QUADRADA; 
-        unidadeConvertidaStr = "mi²";
-        break;
+        case 10: valorConvertido = valorEmMetros / MILHA_QUADRADA; unidadeConvertidaStr = "mi²"; break;
 
-        case 11: valorConvertido = valorEmMetros / ACRES; 
-        unidadeConvertidaStr = "ac";
-        break;
+        case 11: valorConvertido = valorEmMetros / ACRES; unidadeConvertidaStr = "ac"; break;
 
-        case 12: valorConvertido = valorEmMetros / UNIDADE_ASTRONOMICA; 
-        unidadeConvertidaStr = "UA²";
-        break; 
+        case 12: valorConvertido = valorEmMetros / UNIDADE_ASTRONOMICA; unidadeConvertidaStr = "UA²"; break; 
 
-        case 13: valorConvertido = valorEmMetros / PARSEC_QUADRADO; 
-        unidadeConvertidaStr = "pc²";
-        break;
-
-        case 14: valorConvertido = valorEmMetros / ANO_LUZ_QUADRADO; 
-        unidadeConvertidaStr = "ly²";
-        break;  
+        case 13: valorConvertido = valorEmMetros / PARSEC_QUADRADO; unidadeConvertidaStr = "pc²"; break;
+        
+        case 14: valorConvertido = valorEmMetros / ANO_LUZ_QUADRADO; unidadeConvertidaStr = "ly²"; break;  
 
         default:
             printf("Unidade de destino inválida.\n");
@@ -162,9 +132,11 @@ do {
 printf("\nPrograma encerrado. O conversor de Unidades de Área está a sua disposição!\n");
 }
 
-int main(){
+// teste do código
+
+ int main(){
     Conversor_De_Area();
     return 0;
-}
+} 
 
 
