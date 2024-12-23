@@ -16,3 +16,12 @@ O fator origem é o equivalente em metros quadrados de cada unidade do programa.
 Valor Convertido = valor em metros / fator Destino
 
 Isso permite fazer a conversão diretamente com qualquer valor, utilizando o metro quadrado como base.
+
+--------Execução do conversão de unidades de Área--------------
+
+1- O usuário escolhe o valor que deseja que seja convertido.
+2 - Escolhe entre as 14 opções de unidade de medida do valor escolhido.
+3 - Escolhe entre as 14 opções da unidade de medida da conversão.
+
+Exemplo: 
+
