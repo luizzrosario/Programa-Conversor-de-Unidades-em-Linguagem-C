@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <locale.h>
-#include "unidadeDETemperatura.h"
-#include "unidadeDEArmazenamento.h"
-#include "unidadeDeVolume.h"
-#include "unidadeDeMassa.h"
-#include "unidadeDeTempo.h"
 #include "unidadeDeArea.h"
+#include "unidadeDeArmazenamento.h"
 #include "unidadeDeComprimento.h"
+#include "unidadeDeMassa.h"
+#include "unidadeDeTemperatura.h"
+#include "unidadeDeTempo.h"
+#include "unidadeDeVolume.h"
 
 void interface() {
     int escolha;
 
     while (1) {
-        printf("\nSelecione uma categoria para conversão:\n");
+        printf("\nSelecione uma categoria para conversão:\n\n");
         printf("1. Unidades de comprimento\n");
         printf("2. Unidades de massa\n");
         printf("3. Unidades de volume\n");
@@ -23,7 +23,7 @@ void interface() {
         printf("8. Unidades de tempo\n");
         printf("9. Unidades de dados\n");
         printf("0. Sair\n");
-        printf("Escolha uma opção: ");
+        printf("\nEscolha uma opção: ");
         scanf("%d", &escolha);
 
         switch (escolha) {
@@ -40,10 +40,10 @@ void interface() {
                 Conversor_Temperatura();
                 break;
             case 5:
-
+                printf("\n\n\nEm desenvolvimento...\n\n\n");
                 break;
             case 6:
-
+                printf("\n\n\nEm desenvolvimento...\n\n\n");
                 break;
             case 7:
                 Conversor_De_Area();
@@ -53,9 +53,6 @@ void interface() {
                 break;
             case 9:
                 unidadeArmazenamento();
-                break;
-            case 10:
-
                 break;
             case 0:
                 printf("Saindo do programa...\n");
@@ -67,7 +64,7 @@ void interface() {
 }
 
 int main() {
-    system("chcp 65001");
+    system("chcp 65001 > nul"); // saída UTF-8 no terminal
     interface();
     return 0;
 }

@@ -10,6 +10,7 @@ double converter_milimetros(double valor, int unidade_final);
 
 
 void unidades_de_comprimento() {   
+    fflush(stdin); // acrescentado para não dar conflito no buffer
     int unidade_atual, unidade_final;
     double valor_atual, valor_final;
     printf("\n########## Conversao de unidades de comprimento ##########\n");
