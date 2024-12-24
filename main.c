@@ -5,12 +5,7 @@
 #include "volume.h"
 #include "unidadeDeMassa.h"
 #include "conversorTempo.h"
-// #include "velocidade.h"
-// #include "potencia.h"
-// #include "area.h"
-// #include "tempo.h"
-// #include "dados.h"
-// #include "testes.h"
+#include "Unidades_de_Area.h"
 
 void interface() {
     int escolha;
@@ -50,7 +45,7 @@ void interface() {
 
                 break;
             case 7:
-
+                Conversor_De_Area();
                 break;
             case 8:
                 conversorTempo();

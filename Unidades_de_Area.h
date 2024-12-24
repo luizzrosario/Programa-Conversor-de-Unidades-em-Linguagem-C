@@ -131,12 +131,3 @@ do {
 
 printf("\nPrograma encerrado. O conversor de Unidades de Área está a sua disposição!\n");
 }
-
-// teste do código
-
- int main(){
-    Conversor_De_Area();
-    return 0;
-} 
-
-
