@@ -1,6 +1,4 @@
-# embarcatech-g6-s2
-
-Repositório para tarefa do Grupo 6 - Subgrupo 2
+# Repositório do Grupo 6 - Subgrupo 2
 
 ---
 
@@ -62,8 +60,11 @@ A padronização foi um ponto de destaque no projeto. O grupo adotou:
 
 Com essas práticas, o projeto foi conduzido de forma organizada e alinhada às melhores práticas de desenvolvimento colaborativo.
 
+---
 
-------------Parte referente ao conversor de unidades de area-------------
+## Sobre cada conversor
+
+### Unidades de area
 
 O programa é feito utilizado o metro quadrado como base para conversão. Ela é feita em dois passos:
 
@@ -113,4 +114,4 @@ O valor convertido é: 100000.0000000000 m²
 Deseja realizar outra conversão? (s/n): n
 Programa encerrado. Obrigado por utilizar o conversor de unidades de área!
 
-
+### Unidades
