@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 #define BIT 1
 #define BYTE 8
