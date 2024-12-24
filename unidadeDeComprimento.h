@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 void unidades_de_comprimento();
 void validar_entrada(char frase[], int *unidade);
 void validar_valor(char frase[], double *valor);

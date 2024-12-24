@@ -13,7 +13,7 @@
 // Declaração das funções
 void conversorTempo();
 float conversor_unidade_tempo(int unidade_atual, int unidade_escolhida, float valor_atual);
-int codigo_de_unidade_de_medida_valido(int codigo);
+int codigo_de_unidade_de_medida_valido_tempo(int codigo);
 
 // Declaração das funções de conversão
 float converter_segundo_para_minuto(float valor_segundo);
@@ -41,7 +41,7 @@ void conversorTempo() {
         printf("[1] Segundo\n[2] Minuto\n[3] Hora\n[4] Dia\nEscolha: ");
         scanf("%d", &unidade_atual);
 
-        if (!codigo_de_unidade_de_medida_valido(unidade_atual)) {
+        if (!codigo_de_unidade_de_medida_valido_tempo(unidade_atual)) {
             printf("Código de unidade inválido. Tente novamente.\n");
             continue;
         }
@@ -50,7 +50,7 @@ void conversorTempo() {
         printf("[1] Segundo\n[2] Minuto\n[3] Hora\n[4] Dia\nEscolha: ");
         scanf("%d", &unidade_escolhida);
 
-        if (!codigo_de_unidade_de_medida_valido(unidade_escolhida)) {
+        if (!codigo_de_unidade_de_medida_valido_tempo(unidade_escolhida)) {
             printf("Código de unidade inválido. Tente novamente.\n");
             continue;
         }
@@ -63,7 +63,7 @@ void conversorTempo() {
     } while (sair != 1);
 }
 
-int codigo_de_unidade_de_medida_valido(int codigo) {
+int codigo_de_unidade_de_medida_valido_tempo(int codigo) {
     return codigo == CODIGO_SEGUNDO || codigo == CODIGO_MINUTO || 
            codigo == CODIGO_HORA || codigo == CODIGO_DIA;
 }

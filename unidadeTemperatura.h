@@ -61,7 +61,7 @@ char *Resultado_conversao(int conversao, double a_converter)
         return texto_saida;
     }
     // Verifica se a opção é inválida
-    if (conversao < 1 || conversao > sizeof(conversoes) / sizeof(conversoes[0]))
+    if (conversao < 1 || conversao > (int)(sizeof(conversoes) / sizeof(conversoes[0])))
     {
         texto_saida = "Opção inválida, tente novamente.";
         return texto_saida;

@@ -4,7 +4,7 @@
 #include "unidadeArmazenamento.h"
 #include "volume.h"
 #include "unidadeDeMassa.h"
-// #include "comprimento.h"
+#include "conversorTempo.h"
 // #include "velocidade.h"
 // #include "potencia.h"
 // #include "area.h"
@@ -53,7 +53,7 @@ void interface() {
 
                 break;
             case 8:
-
+                conversorTempo();
                 break;
             case 9:
                 unidadeArmazenamento();
