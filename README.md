@@ -39,11 +39,11 @@ Para compilar o código do projeto, siga os passos abaixo:
 2. Abra o terminal ou prompt de comando e navegue até o diretório onde os arquivos do projeto estão localizados.
 3. Use o seguinte comando para compilar o programa utilizando o GCC:
 
-    gcc -o conversor main.c
+    'gcc -o conversor main.c'
 
 4. Para executar o programa compilado, utilize o comando:
 
-    ./conversor
+    './conversor'
 
 Certifique-se de ter o GCC instalado no sistema para que a compilação funcione corretamente.
 
