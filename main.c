@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <locale.h>
-#include "unidadeTemperatura.h"
-#include "unidadeArmazenamento.h"
-#include "volume.h"
+#include "unidadeDETemperatura.h"
+#include "unidadeDEArmazenamento.h"
+#include "unidadeDeVolume.h"
 #include "unidadeDeMassa.h"
 #include "unidadeDeTempo.h"
-#include "Unidades_de_Area.h"
+#include "unidadeDeArea.h"
 
 void interface() {
     int escolha;
