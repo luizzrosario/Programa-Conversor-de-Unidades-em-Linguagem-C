@@ -6,6 +6,7 @@
 #include "unidadeDeMassa.h"
 #include "unidadeDeTempo.h"
 #include "unidadeDeArea.h"
+#include "unidadeDeComprimento.h"
 
 void interface() {
     int escolha;
@@ -27,7 +28,7 @@ void interface() {
 
         switch (escolha) {
             case 1:
-                
+                unidades_de_comprimento();
                 break;
             case 2:
                 conversorMassa();
@@ -66,7 +67,7 @@ void interface() {
 }
 
 int main() {
-    setlocale(LC_ALL, "");
+    system("chcp 65001");
     interface();
     return 0;
 }
