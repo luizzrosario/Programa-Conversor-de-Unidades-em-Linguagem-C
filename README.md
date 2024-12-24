@@ -35,9 +35,33 @@ O programa gira em torno de uma interface no terminal que utiliza um sistema de 
 
 ## Relatório
 
-O desenvolvimento do projeto foi marcado por reuniões colaborativas que impulsionaram o progresso do trabalho e definiram estratégias de organização. Durante o primeiro encontro, realizado em 18 de dezembro de 2024, foram discutidas ideias iniciais e organizada a estrutura de trabalho. Luiz Rosário foi escolhido como líder semanal e criou o repositório do projeto no GitHub, sugerindo o uso de branches individuais para cada integrante. Além disso, definiu-se que cada membro implementaria uma função específica do programa e realizaria commits para documentar suas contribuições.
-No segundo encontro, em 20 de dezembro de 2024, o grupo avaliou o progresso e identificou que boa parte das funcionalidades já estava quase concluída, com exceção das conversões relacionadas às unidades de velocidade e potência, que ainda estavam pendentes. Problemas técnicos, como conflitos de código, foram resolvidos colaborativamente, o que ajudou a padronizar a integração entre os módulos. Houve discussões técnicas sobre a conversão de funções para void, remoção de retornos desnecessários e ajustes na interface do programa.
-A padronização foi outro ponto de destaque no projeto. O grupo adotou a convenção CamelCase para nomear os arquivos de cabeçalho (.h), como unidadeDeArea.h e unidadeDeArmazenamento.h, garantindo consistência e clareza nos nomes. Além disso, a organização modular do código, com a separação de funções específicas em arquivos dedicados, permitiu maior colaboração e facilidade na manutenção futura do programa.
+### Desenvolvimento do Projeto
+
+O desenvolvimento do projeto foi marcado por reuniões colaborativas que impulsionaram o progresso do trabalho e definiram estratégias de organização. 
+
+#### Primeiro Encontro (18 de dezembro de 2024)
+No primeiro encontro, foram discutidas ideias iniciais e organizada a estrutura de trabalho. Luiz Rosário foi escolhido como líder semanal e ficou responsável por criar o repositório do projeto no GitHub. Entre as estratégias definidas, destacam-se:
+- Uso de branches individuais para cada integrante.
+- Implementação de funções específicas por cada membro do grupo.
+- Realização de commits para documentar as contribuições de forma clara.
+
+#### Segundo Encontro (20 de dezembro de 2024)
+No segundo encontro, o grupo avaliou o progresso do trabalho e constatou que boa parte das funcionalidades já estava quase concluída, exceto as conversões relacionadas às unidades de velocidade e potência, que ainda estavam pendentes. 
+
+Além disso, problemas técnicos, como conflitos de código, foram resolvidos de maneira colaborativa, o que contribuiu para a padronização e integração entre os módulos. Outras decisões técnicas incluíram:
+- Conversão de funções para o tipo `void` quando aplicável.
+- Remoção de retornos desnecessários.
+- Ajustes na interface do programa.
+
+#### Padronização e Organização
+A padronização foi um ponto de destaque no projeto. O grupo adotou:
+- **Convenção CamelCase** para nomeação dos arquivos de cabeçalho (.h), como:
+  - `unidadeDeArea.h`
+  - `unidadeDeArmazenamento.h`
+- Organização modular do código, separando funções específicas em arquivos dedicados, o que facilita a colaboração e a manutenção futura do programa. 
+
+Com essas práticas, o projeto foi conduzido de forma organizada e alinhada às melhores práticas de desenvolvimento colaborativo.
+
 
 ------------Parte referente ao conversor de unidades de area-------------
 
