@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <locale.h>
+#include <locale.h> // Biblioteca para configurar a localidade (idioma, formato de números, datas, etc.)
+// Incluindo os arquivos de cabeçalho
 #include "unidadeDeArea.h"
 #include "unidadeDeArmazenamento.h"
 #include "unidadeDeComprimento.h"
@@ -8,9 +9,11 @@
 #include "unidadeDeTempo.h"
 #include "unidadeDeVolume.h"
 
+// Função que apresenta a interface de interação com o usuário
 void interface() {
     int escolha;
 
+    // Loop principal para exibir o menu até o usuário decidir sair
     while (1) {
         printf("\nSelecione uma categoria para conversão:\n\n");
         printf("1. Unidades de comprimento\n");
@@ -26,6 +29,7 @@ void interface() {
         printf("\nEscolha uma opção: ");
         scanf("%d", &escolha);
 
+        // Verifica a opção escolhida pelo usuário e executa a função correspondente
         switch (escolha) {
             case 1:
                 unidades_de_comprimento();
@@ -64,7 +68,7 @@ void interface() {
 }
 
 int main() {
-    system("chcp 65001 > nul"); // saída UTF-8 no terminal
-    interface();
+    system("chcp 65001 > nul"); // Configura o terminal para usar codificação UTF-8 sem exibir mensagem
+    interface(); // Inicia a interface do programa
     return 0;
 }
