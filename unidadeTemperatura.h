@@ -13,7 +13,7 @@
 #include <string.h>
 
 void Conversor_Temperatura();
-char *Resultado_conversao(int tipo_conversao, double a_converter);
+char *Resultado_conversao(int conversao, double a_converter);
 double Celsius_para_Fahrenheit(double c);
 double Fahrenheit_para_Celsius(double f);
 double Celsius_para_Kelvin(double c);
@@ -26,35 +26,32 @@ char *conversoes[] = {"Celsius para Fahrenheit", "Fahrenheit para Celsius", "Cel
 // Função principal do conversor, basta chama-la na função main (Não esqueça de adicionar 'system("chcp 65001");')
 void Conversor_Temperatura()
 {
-    printf("\n______________CONVERSOR DE TEMPERATURA______________\n");
     do{
-        int tipo_conversao;
+        int conversao;
         double a_converter;
 
-        printf("\n____Escolha a Conversão Desejada____");
+        printf("\nEscolha a conversão desejada.");
         // for responsável por exibir as opções para o úsuário
         for (size_t i = 0; i < sizeof(conversoes) / sizeof(conversoes[0]); i++)
         {
-            printf("\n\t %d) => %s", (i + 1), conversoes[i]);
+            printf("\n\t %d => %s", (i + 1), conversoes[i]);
         }
-        printf("\n\t 0) => SAIR");
+        printf("\n\t 0 => PARA SAIR");
 
         printf("\nDigite o número correspondente: ");
-        scanf("%d", &tipo_conversao);
-
-        if(tipo_conversao == 0) break;
-
+        scanf("%d", &conversao);
+        if(conversao == 0) break;
         printf("Digite o valor do grau a converter: ");
         scanf("%lf", &a_converter);
 
-        char *resultado = Resultado_conversao(tipo_conversao, a_converter);
+        char *resultado = Resultado_conversao(conversao, a_converter);
         printf("\n%s\n", resultado);
     }while (1);
-    printf("\nVocê saiu do Conversor de Temperatura!\n");
+    printf("\nVocê saiu do Conversor de Temperatura!");
 }
 
 // função responsável por genciar a escolha do usúário e tratamento de erros. retorna a mensagem com o resultado.
-char *Resultado_conversao(int tipo_conversao, double a_converter)
+char *Resultado_conversao(int conversao, double a_converter)
 {
     // Aloca memória para a string
     char *texto_saida = malloc(210);
@@ -64,17 +61,19 @@ char *Resultado_conversao(int tipo_conversao, double a_converter)
         return texto_saida;
     }
     // Verifica se a opção é inválida
-    if (tipo_conversao < 1 || tipo_conversao > sizeof(conversoes) / sizeof(conversoes[0])){
+    if (conversao < 1 || conversao > sizeof(conversoes) / sizeof(conversoes[0]))
+    {
         texto_saida = "Opção inválida, tente novamente.";
         return texto_saida;
     }
+
     // Inicia a mensagem de retorno
-    snprintf(texto_saida, 210, "A conversão de '%s' é igual a: ", conversoes[tipo_conversao - 1]);
+    snprintf(texto_saida, 210, "A conversao de '%s' é igual a: ", conversoes[conversao - 1]);
     char *pos_atual = texto_saida + strlen(texto_saida);  //Aponta para a posição final dos caracteres já adicionados à string;
     int restante = 210 - strlen(texto_saida); // verifica os espaços restande (que podem ser adicionado mais caracteres);
 
     //Realiza a conversão específica
-    switch (tipo_conversao)
+    switch (conversao)
     {
     case 1:
         snprintf(pos_atual, restante, "%.2f ºF", Celsius_para_Fahrenheit(a_converter));
