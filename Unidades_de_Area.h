@@ -34,7 +34,7 @@ do {
 
     // Exibe as opções de unidades do menu
     printf("\nBem-vindo ao Conversor de Unidades de Área!\n");
-        printf("Escolha uma das opções abaixo:\n");
+        printf("As unidades de área disponíveis para conversão são essas abaixo:\n");
         printf("1. Metro Quadrado (m²)\n");
         printf("2. Centímetro Quadrado (cm²)\n");
         printf("3. Quilômetro Quadrado (km²)\n");
@@ -57,7 +57,7 @@ do {
     printf("\nEscolha a unidade de origem (1-14): ");
     scanf("%d", &unidadeAntes);
 
-    printf("Escolha a unidade de destino (1-14): ");
+    printf("Escolha a unidade desejada (1-14): ");
     scanf("%d", &unidadeConvertida);
 
 //----------Fazendo a conversão para metros quadrados------------------
@@ -115,7 +115,7 @@ do {
         case 14: valorConvertido = valorEmMetros / ANO_LUZ_QUADRADO; unidadeConvertidaStr = "ly²"; break;  
 
         default:
-            printf("Unidade de destino inválida.\n");
+            printf("Unidade desejada inválida.\n");
             continue; // caso seja colocada um digito inválido imediatamente retorna ao início do loop para que o usuário tente novamente
     }
 
@@ -134,9 +134,9 @@ printf("\nPrograma encerrado. O conversor de Unidades de Área está a sua dispo
 
 // teste do código
 
- int main(){
+ /*int main(){
     Conversor_De_Area();
     return 0;
-} 
+} */ 
 
 
