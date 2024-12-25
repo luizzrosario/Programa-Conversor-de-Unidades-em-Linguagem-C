@@ -132,4 +132,41 @@ O valor convertido é: 100000.0000000000 m²
 Deseja realizar outra conversão? (s/n): n
 Programa encerrado. Obrigado por utilizar o conversor de unidades de área!
 
+### Unidades de Volume 🚰
+
+Este programa permite converter entre diferentes unidades de volume em três passos, utilizando o **litro** (L) como unidade base.
+
+#### Unidades para conversão 🧪
+
+Escolha entre as seguintes unidades de volume:
+
+1. Litro (L) 🧃
+2. Metro cúbico (m³) 📦
+3. Mililitro (mL) 💧
+
+#### Como Funciona ⚙️
+
+1. **Escolha o valor** que deseja converter.
+2. **Selecione a unidade de origem** de uma lista de 3 opções.
+3. **Selecione a unidade de destino** de uma lista de 3 opções.
+4. O programa converte o valor utilizando o **litro (L)** como base e exibe o resultado.
+5. Após a conversão, o programa exibe o menu inicial, e o usuário pode usar qualquer conversor! 😄
+
+#### Exemplo de Execução:
+
+```plaintext
+Digite o valor: 1250
+Selecione a unidade de origem:
+1 - Litro (L)
+2 - Metro cúbico (m³)
+3 - Mililitro (mL)
+Opção: 3
+Selecione a unidade de destino:
+1 - Litro (L)
+2 - Metro cúbico (m³)
+3 - Mililitro (mL)
+Opção: 1
+Valor convertido: 1.250000
+```
+
 ### Unidades
