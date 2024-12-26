@@ -79,10 +79,10 @@ A padronização foi um ponto de destaque no projeto. O grupo adotou:
 Com essas práticas, o projeto foi conduzido de forma organizada e alinhada às melhores práticas de desenvolvimento colaborativo.
 
 ---
+# Sobre cada conversor
 
-## Sobre cada conversor
 
-### Unidades de area
+### Unidade de area
 
 O programa é feito utilizado o metro quadrado como base para conversão. Ela é feita em dois passos:
 
@@ -105,7 +105,7 @@ Isso permite fazer a conversão diretamente com qualquer valor, utilizando o met
 3 - Escolhe entre as 14 opções da unidade de medida da conversão.
 
 Exemplo:
-
+```plaintext
 Bem-vindo ao Conversor de Unidades de Área!
 Escolha uma das opções abaixo:
 1. Metro Quadrado (m²)
@@ -131,6 +131,64 @@ O valor convertido é: 100000.0000000000 m²
 
 Deseja realizar outra conversão? (s/n): n
 Programa encerrado. Obrigado por utilizar o conversor de unidades de área!
+```
+
+### Unidade de Temparatura
+
+Este programa realiza conversões entre diferentes escalas de temperatura (Celsius, Fahrenheit e Kelvin). Ele utiliza fórmulas matemáticas precisas para transformar os valores fornecidos pelo usuário e apresenta os resultados de forma clara e direta.  
+
+---
+#### Como o programa funciona  
+
+1. O programa apresenta um menu com diversas opções de conversão.  
+2. O usuário escolhe o tipo de conversão desejada, insere o valor da temperatura, e o resultado é calculado utilizando a fórmula correspondente.  
+3. O programa pode realizar múltiplas conversões consecutivas até o usuário decidir encerrá-lo.  
+
+#### Fórmulas Utilizadas  
+- **Celsius para Fahrenheit:** \( F = (C \times 1.8) + 32 \)  
+- **Fahrenheit para Celsius:** \( C = \frac{F - 32}{1.8} \)  
+- **Celsius para Kelvin:** \( K = C + 273.15 \)  
+- **Kelvin para Celsius:** \( C = K - 273.15 \)  
+- **Fahrenheit para Kelvin:** \( K = \frac{F - 32}{1.8} + 273.15 \)  
+- **Kelvin para Fahrenheit:** \( F = (K - 273.15) \times 1.8 + 32 \)  
+
+---
+
+#### Menu de Opções  
+
+1. Celsius para Fahrenheit  
+2. Fahrenheit para Celsius  
+3. Celsius para Kelvin  
+4. Kelvin para Celsius  
+5. Fahrenheit para Kelvin  
+6. Kelvin para Fahrenheit  
+7. Celsius para Fahrenheit e Kelvin  
+8. Fahrenheit para Celsius e Kelvin  
+9. Kelvin para Celsius e Fahrenheit  
+0. Sair  
+
+---
+
+#### Exemplo de Execução  
+
+```plaintext
+Escolha a conversão desejada:  
+ 1 => Celsius para Fahrenheit  
+ 2 => Fahrenheit para Celsius  
+ 3 => Celsius para Kelvin  
+ 4 => Kelvin para Celsius  
+ 5 => Fahrenheit para Kelvin  
+ 6 => Kelvin para Fahrenheit  
+ 7 => Celsius para Fahrenheit e Kelvin  
+ 8 => Fahrenheit para Celsius e Kelvin  
+ 9 => Kelvin para Celsius e Fahrenheit  
+ 0 => PARA SAIR  
+
+Digite o número correspondente: 3
+Digite o valor do grau a converter: 25
+
+A conversão de 'Celsius para Kelvin' é igual a: 298.15 K
+```
 
 ### Unidades de Volume 🚰
 
@@ -170,3 +228,7 @@ Valor convertido: 1.250000
 ```
 
 ### Unidades
+=======
+
+### Unidade de ...
+
