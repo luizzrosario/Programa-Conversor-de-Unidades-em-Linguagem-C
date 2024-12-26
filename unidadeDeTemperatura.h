@@ -26,7 +26,8 @@ char *conversoes[] = {"Celsius para Fahrenheit", "Fahrenheit para Celsius", "Cel
 // Função principal do conversor, basta chama-la na função main (Não esqueça de adicionar 'system("chcp 65001");')
 void Conversor_Temperatura()
 {
-    do{
+    do
+    {
         int conversao;
         double a_converter;
 
@@ -40,13 +41,14 @@ void Conversor_Temperatura()
 
         printf("\nDigite o número correspondente: ");
         scanf("%d", &conversao);
-        if(conversao == 0) break;
+        if (conversao == 0)
+            break;
         printf("Digite o valor do grau a converter: ");
         scanf("%lf", &a_converter);
 
         char *resultado = Resultado_conversao(conversao, a_converter);
         printf("\n%s\n", resultado);
-    }while (1);
+    } while (1);
     printf("\nVocê saiu do Conversor de Temperatura!");
 }
 
@@ -69,10 +71,10 @@ char *Resultado_conversao(int conversao, double a_converter)
 
     // Inicia a mensagem de retorno
     snprintf(texto_saida, 210, "A conversao de '%s' é igual a: ", conversoes[conversao - 1]);
-    char *pos_atual = texto_saida + strlen(texto_saida);  //Aponta para a posição final dos caracteres já adicionados à string;
-    int restante = 210 - strlen(texto_saida); // verifica os espaços restande (que podem ser adicionado mais caracteres);
+    char *pos_atual = texto_saida + strlen(texto_saida); // Aponta para a posição final dos caracteres já adicionados à string;
+    int restante = 210 - strlen(texto_saida);            // verifica os espaços restande (que podem ser adicionado mais caracteres);
 
-    //Realiza a conversão específica
+    // Realiza a conversão específica
     switch (conversao)
     {
     case 1:

@@ -22,13 +22,15 @@ float converter_quilograma_para_tonelada(float valor_quilograma);
 float converter_tonelada_para_grama(float valor_tonelada);
 float converter_tonelada_para_quilograma(float valor_quilograma);
 
-void conversorMassa() {
+void conversorMassa()
+{
 
   // declaração das variaveis
   int unidade_atual, unidade_escolhida, sair;
   float valor_atual, valor_convertido;
 
-  do {
+  do
+  {
 
     printf("Digite o valor a ser convertido: ");
     scanf("%f", &valor_atual);
@@ -38,8 +40,9 @@ void conversorMassa() {
     scanf("%d", &unidade_atual);
 
     if (!(codigo_de_unidade_de_medida_valido(
-            unidade_atual))) { // caso o usuário não selecione nenhuma unidade
-                               // valida o loop repete
+            unidade_atual)))
+    { // caso o usuário não selecione nenhuma unidade
+      // valida o loop repete
       printf("Valor inválido, reiniciando.\n");
 
       continue;
@@ -50,7 +53,8 @@ void conversorMassa() {
     scanf("%d", &unidade_escolhida);
 
     if (!(codigo_de_unidade_de_medida_valido(
-            unidade_escolhida))) { // verificando novamente
+            unidade_escolhida)))
+    { // verificando novamente
       printf("Valor inválido, reiniciando.\n");
       continue;
     }
@@ -68,9 +72,11 @@ void conversorMassa() {
 }
 
 // função para verificar se o usuário digitou um código valido
-int codigo_de_unidade_de_medida_valido(int codigo) {
+int codigo_de_unidade_de_medida_valido(int codigo)
+{
 
-  switch (codigo) {
+  switch (codigo)
+  {
 
   case CODIGO_GRAMA:
     return 1;
@@ -85,28 +91,42 @@ int codigo_de_unidade_de_medida_valido(int codigo) {
 
 // função principal para chamar as auxiliares de conversão
 float conversor_unidade_massa(int unidade_atual, int unidade_escolhida,
-                              float valor_atual) {
+                              float valor_atual)
+{
 
   float valor_convertido;
 
-  if (unidade_atual == CODIGO_GRAMA && unidade_escolhida == CODIGO_QUILOGRAMA) {
+  if (unidade_atual == CODIGO_GRAMA && unidade_escolhida == CODIGO_QUILOGRAMA)
+  {
     valor_convertido = converter_grama_para_quilograma(valor_atual);
-  } else if (unidade_atual == CODIGO_GRAMA &&
-             unidade_escolhida == CODIGO_TONELADA) {
+  }
+  else if (unidade_atual == CODIGO_GRAMA &&
+           unidade_escolhida == CODIGO_TONELADA)
+  {
     valor_convertido = converter_grama_para_tonelada(valor_atual);
-  } else if (unidade_atual == CODIGO_QUILOGRAMA &&
-             unidade_escolhida == CODIGO_GRAMA) {
+  }
+  else if (unidade_atual == CODIGO_QUILOGRAMA &&
+           unidade_escolhida == CODIGO_GRAMA)
+  {
     valor_convertido = converter_quilograma_para_grama(valor_atual);
-  } else if (unidade_atual == CODIGO_QUILOGRAMA &&
-             unidade_escolhida == CODIGO_TONELADA) {
+  }
+  else if (unidade_atual == CODIGO_QUILOGRAMA &&
+           unidade_escolhida == CODIGO_TONELADA)
+  {
     valor_convertido = converter_quilograma_para_tonelada(valor_atual);
-  } else if (unidade_atual == CODIGO_TONELADA &&
-             unidade_escolhida == CODIGO_GRAMA) {
+  }
+  else if (unidade_atual == CODIGO_TONELADA &&
+           unidade_escolhida == CODIGO_GRAMA)
+  {
     valor_convertido = converter_tonelada_para_grama(valor_atual);
-  } else if (unidade_atual == CODIGO_TONELADA &&
-             unidade_escolhida == CODIGO_QUILOGRAMA) {
+  }
+  else if (unidade_atual == CODIGO_TONELADA &&
+           unidade_escolhida == CODIGO_QUILOGRAMA)
+  {
     valor_convertido = converter_tonelada_para_quilograma(valor_atual);
-  } else {
+  }
+  else
+  {
     valor_convertido = valor_atual;
   }
 
@@ -115,27 +135,33 @@ float conversor_unidade_massa(int unidade_atual, int unidade_escolhida,
 
 // funções auxiliares de conversões
 
-float converter_grama_para_quilograma(float valor_grama) {
+float converter_grama_para_quilograma(float valor_grama)
+{
   return valor_grama / QUILOGRAMA;
 }
 
-float converter_grama_para_tonelada(float valor_grama) {
+float converter_grama_para_tonelada(float valor_grama)
+{
   return valor_grama / TONELADA;
 }
 
-float converter_quilograma_para_grama(float valor_quilograma) {
+float converter_quilograma_para_grama(float valor_quilograma)
+{
   return valor_quilograma * QUILOGRAMA;
 }
 
-float converter_quilograma_para_tonelada(float valor_quilograma) {
+float converter_quilograma_para_tonelada(float valor_quilograma)
+{
   float valor_em_grama = valor_quilograma * QUILOGRAMA;
   return valor_em_grama / TONELADA;
 }
 
-float converter_tonelada_para_grama(float valor_tonelada) {
+float converter_tonelada_para_grama(float valor_tonelada)
+{
   return valor_tonelada * TONELADA;
 }
 
-float converter_tonelada_para_quilograma(float valor_tonelada) {
+float converter_tonelada_para_quilograma(float valor_tonelada)
+{
   return valor_tonelada * QUILOGRAMA;
 }

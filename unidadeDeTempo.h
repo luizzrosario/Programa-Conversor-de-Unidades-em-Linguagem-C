@@ -29,11 +29,13 @@ float converter_dia_para_segundo(float valor_dia);
 float converter_dia_para_minuto(float valor_dia);
 float converter_dia_para_hora(float valor_dia);
 
-void conversorTempo() {
+void conversorTempo()
+{
     int unidade_atual, unidade_escolhida, sair;
     float valor_atual, valor_convertido;
 
-    do {
+    do
+    {
         printf("Digite o valor a ser convertido: ");
         scanf("%f", &valor_atual);
 
@@ -41,7 +43,8 @@ void conversorTempo() {
         printf("[1] Segundo\n[2] Minuto\n[3] Hora\n[4] Dia\nEscolha: ");
         scanf("%d", &unidade_atual);
 
-        if (!codigo_de_unidade_de_medida_valido_tempo(unidade_atual)) {
+        if (!codigo_de_unidade_de_medida_valido_tempo(unidade_atual))
+        {
             printf("Código de unidade inválido. Tente novamente.\n");
             continue;
         }
@@ -50,7 +53,8 @@ void conversorTempo() {
         printf("[1] Segundo\n[2] Minuto\n[3] Hora\n[4] Dia\nEscolha: ");
         scanf("%d", &unidade_escolhida);
 
-        if (!codigo_de_unidade_de_medida_valido_tempo(unidade_escolhida)) {
+        if (!codigo_de_unidade_de_medida_valido_tempo(unidade_escolhida))
+        {
             printf("Código de unidade inválido. Tente novamente.\n");
             continue;
         }
@@ -63,12 +67,14 @@ void conversorTempo() {
     } while (sair != 1);
 }
 
-int codigo_de_unidade_de_medida_valido_tempo(int codigo) {
-    return codigo == CODIGO_SEGUNDO || codigo == CODIGO_MINUTO || 
+int codigo_de_unidade_de_medida_valido_tempo(int codigo)
+{
+    return codigo == CODIGO_SEGUNDO || codigo == CODIGO_MINUTO ||
            codigo == CODIGO_HORA || codigo == CODIGO_DIA;
 }
 
-float conversor_unidade_tempo(int unidade_atual, int unidade_escolhida, float valor_atual) {
+float conversor_unidade_tempo(int unidade_atual, int unidade_escolhida, float valor_atual)
+{
     if (unidade_atual == CODIGO_SEGUNDO && unidade_escolhida == CODIGO_MINUTO)
         return converter_segundo_para_minuto(valor_atual);
     if (unidade_atual == CODIGO_SEGUNDO && unidade_escolhida == CODIGO_HORA)
