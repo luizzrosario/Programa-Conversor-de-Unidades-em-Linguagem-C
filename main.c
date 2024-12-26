@@ -9,6 +9,7 @@
 #include "unidadeDeTempo.h"
 #include "unidadeDeVelocidade.h"
 #include "unidadeDeVolume.h"
+#include "unidadeDeEnergia.h"
 
 // Função que apresenta a interface de interação com o usuário
 void interface() {
@@ -48,7 +49,7 @@ void interface() {
                 conversorDeVelocidade();
                 break;
             case 6:
-                printf("\n\n\nEm desenvolvimento...\n\n\n");
+                conversorEnergia();
                 break;
             case 7:
                 Conversor_De_Area();
