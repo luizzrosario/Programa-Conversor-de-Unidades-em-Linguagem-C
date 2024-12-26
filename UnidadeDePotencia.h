@@ -8,9 +8,9 @@
 #define CODIGO_CAVALOS_VAPOR 3
 
 // funções. adiciono as principais funçoes.
-void conversorEnergia();
-float conversor_unidade_energia(int unidade_atual, int unidade_escolhida, float valor_atual);
-int codigo_de_unidade_energia_valido(int codigo);
+void UnidadeDePotencia();
+float conversor_unidade_potencia(int unidade_atual, int unidade_escolhida, float valor_atual);
+int codigo_de_unidade_potencia_valido(int codigo);
 
 float converter_watts_para_kilowatts(float valor_watts);
 float converter_watts_para_cavalos_vapor(float valor_watts);
@@ -19,32 +19,32 @@ float converter_kilowatts_para_cavalos_vapor(float valor_kilowatts);
 float converter_cavalos_vapor_para_watts(float valor_cavalos);
 float converter_cavalos_vapor_para_kilowatts(float valor_cavalos);
 
-// função principal. implementação da função "conversorEnergia".
-void conversorEnergia() {
+// função principal. implementação da função "UnidadeDePotencia".
+void UnidadeDePotencia() {
     int unidade_atual, unidade_escolhida, sair;
     float valor_atual, valor_convertido;
 
     do {
-        printf("Digite o valor a ser convertido: ");
+        printf("Digite o valor da potência a ser convertido: ");
         scanf("%f", &valor_atual);
 
-        printf("Em qual unidade de energia esse valor está?\n[1] Watts\n[2] Kilowatts\n[3] Cavalos-vapor\nEscolha: ");
+        printf("Em qual unidade de potência esse valor está?\n[1] Watts\n[2] Kilowatts\n[3] Cavalos-vapor\nEscolha: ");
         scanf("%d", &unidade_atual);
 
-        if (!codigo_de_unidade_energia_valido(unidade_atual)) {
+        if (!codigo_de_unidade_potencia_valido(unidade_atual)) {
             printf("Valor inválido, reiniciando.\n");
             continue;
         }
 
-        printf("Para qual unidade de energia deseja converter?\n[1] Watts\n[2] Kilowatts\n[3] Cavalos-vapor\nEscolha: ");
+        printf("Para qual unidade de potência deseja converter?\n[1] Watts\n[2] Kilowatts\n[3] Cavalos-vapor\nEscolha: ");
         scanf("%d", &unidade_escolhida);
 
-        if (!codigo_de_unidade_energia_valido(unidade_escolhida)) {
+        if (!codigo_de_unidade_potencia_valido(unidade_escolhida)) {
             printf("Valor inválido, reiniciando.\n");
             continue;
         }
 
-        valor_convertido = conversor_unidade_energia(unidade_atual, unidade_escolhida, valor_atual);
+        valor_convertido = conversor_unidade_potencia(unidade_atual, unidade_escolhida, valor_atual);
         printf("O valor convertido é: %.2f\n", valor_convertido);
 
         printf("Digite 1 para sair ou qualquer outro número para continuar: ");
@@ -52,8 +52,8 @@ void conversorEnergia() {
     } while (sair != 1);
 }
 
-// Validador. Verifica se a unidade de energia escolhida existe.
-int codigo_de_unidade_energia_valido(int codigo) {
+// Validador. Verifica se a unidade de potência escolhida existe.
+int codigo_de_unidade_potencia_valido(int codigo) {
     switch (codigo) {
         case CODIGO_WATTS:
         case CODIGO_KILOWATTS:
@@ -64,8 +64,8 @@ int codigo_de_unidade_energia_valido(int codigo) {
     }
 }
 
-// Implementador-1. Implementa a função de conversão conversor_unidade_energia.
-float conversor_unidade_energia(int unidade_atual, int unidade_escolhida, float valor_atual) {
+// Implementador-1. Implementa a função de conversão conversor_unidade_potencia.
+float conversor_unidade_potencia(int unidade_atual, int unidade_escolhida, float valor_atual) {
     if (unidade_atual == CODIGO_WATTS && unidade_escolhida == CODIGO_KILOWATTS) {
         return converter_watts_para_kilowatts(valor_atual);
     } else if (unidade_atual == CODIGO_WATTS && unidade_escolhida == CODIGO_CAVALOS_VAPOR) {
