@@ -60,5 +60,7 @@ void conversorArmazenamento() {
 
     do {
         printf("Digite o valor a ser convertido: ");
-    }
+    } while (sair != 1);
 }
+
+return 0;
