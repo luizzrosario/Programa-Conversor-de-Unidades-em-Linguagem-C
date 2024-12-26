@@ -5,11 +5,11 @@
 #include "unidadeDeArmazenamento.h"
 #include "unidadeDeComprimento.h"
 #include "unidadeDeMassa.h"
+#include "UnidadeDePotencia.h"
 #include "unidadeDeTemperatura.h"
 #include "unidadeDeTempo.h"
 #include "unidadeDeVelocidade.h"
 #include "unidadeDeVolume.h"
-#include "UnidadeDePotencia.h"
 
 // Função que apresenta a interface de interação com o usuário
 void interface() {
