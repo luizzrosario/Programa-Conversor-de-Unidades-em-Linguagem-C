@@ -21,4 +21,31 @@ float converter_cavalos_vapor_para_kilowatts(float valor_cavalos);
 void conversorEnergia() {
     int unidade_atual, unidade_escolhida, sair;
     float valor_atual, valor_convertido;
+
+    do {
+        printf("Digite o valor a ser convertido: ");
+        scanf("%f", &valor_atual);
+
+        printf("Em qual unidade de energia esse valor está?\n[1] Watts\n[2] Kilowatts\n[3] Cavalos-vapor\nEscolha: ");
+        scanf("%d", &unidade_atual);
+
+        if (!codigo_de_unidade_energia_valido(unidade_atual)) {
+            printf("Valor inválido, reiniciando.\n");
+            continue;
+        }
+
+        printf("Para qual unidade de energia deseja converter?\n[1] Watts\n[2] Kilowatts\n[3] Cavalos-vapor\nEscolha: ");
+        scanf("%d", &unidade_escolhida);
+
+        if (!codigo_de_unidade_energia_valido(unidade_escolhida)) {
+            printf("Valor inválido, reiniciando.\n");
+            continue;
+        }
+
+        valor_convertido = conversor_unidade_energia(unidade_atual, unidade_escolhida, valor_atual);
+        printf("O valor convertido é: %.2f\n", valor_convertido);
+
+        printf("Digite 1 para sair ou qualquer outro número para continuar: ");
+        scanf("%d", &sair);
+    } while (sair != 1);
 }
