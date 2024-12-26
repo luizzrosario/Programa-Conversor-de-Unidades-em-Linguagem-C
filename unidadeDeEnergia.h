@@ -61,3 +61,21 @@ int codigo_de_unidade_energia_valido(int codigo) {
     }
 }
 
+
+float conversor_unidade_energia(int unidade_atual, int unidade_escolhida, float valor_atual) {
+    if (unidade_atual == CODIGO_WATTS && unidade_escolhida == CODIGO_KILOWATTS) {
+        return converter_watts_para_kilowatts(valor_atual);
+    } else if (unidade_atual == CODIGO_WATTS && unidade_escolhida == CODIGO_CAVALOS_VAPOR) {
+        return converter_watts_para_cavalos_vapor(valor_atual);
+    } else if (unidade_atual == CODIGO_KILOWATTS && unidade_escolhida == CODIGO_WATTS) {
+        return converter_kilowatts_para_watts(valor_atual);
+    } else if (unidade_atual == CODIGO_KILOWATTS && unidade_escolhida == CODIGO_CAVALOS_VAPOR) {
+        return converter_kilowatts_para_cavalos_vapor(valor_atual);
+    } else if (unidade_atual == CODIGO_CAVALOS_VAPOR && unidade_escolhida == CODIGO_WATTS) {
+        return converter_cavalos_vapor_para_watts(valor_atual);
+    } else if (unidade_atual == CODIGO_CAVALOS_VAPOR && unidade_escolhida == CODIGO_KILOWATTS) {
+        return converter_cavalos_vapor_para_kilowatts(valor_atual);
+    } else {
+        return valor_atual; // Caso a unidade inicial e final sejam iguais
+    }
+}
