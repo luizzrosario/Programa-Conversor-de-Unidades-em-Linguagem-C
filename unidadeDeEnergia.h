@@ -1,3 +1,4 @@
+// defines. defino todos os valores baseado em watts e o seu "codigo".
 #define WATTS 1
 #define KILOWATTS 1000
 #define CAVALOS_VAPOR 735.5
@@ -6,6 +7,7 @@
 #define CODIGO_KILOWATTS 2
 #define CODIGO_CAVALOS_VAPOR 3
 
+// funções. adiciono as principais funçoes.
 void conversorEnergia();
 float conversor_unidade_energia(int unidade_atual, int unidade_escolhida, float valor_atual);
 int codigo_de_unidade_energia_valido(int codigo);
@@ -17,7 +19,7 @@ float converter_kilowatts_para_cavalos_vapor(float valor_kilowatts);
 float converter_cavalos_vapor_para_watts(float valor_cavalos);
 float converter_cavalos_vapor_para_kilowatts(float valor_cavalos);
 
-
+// função principal. implementação da função "conversorEnergia".
 void conversorEnergia() {
     int unidade_atual, unidade_escolhida, sair;
     float valor_atual, valor_convertido;
@@ -50,6 +52,7 @@ void conversorEnergia() {
     } while (sair != 1);
 }
 
+// Validador. Verifica se a unidade de energia escolhida existe.
 int codigo_de_unidade_energia_valido(int codigo) {
     switch (codigo) {
         case CODIGO_WATTS:
@@ -61,7 +64,7 @@ int codigo_de_unidade_energia_valido(int codigo) {
     }
 }
 
-
+// Implementador-1. Implementa a função de conversão conversor_unidade_energia.
 float conversor_unidade_energia(int unidade_atual, int unidade_escolhida, float valor_atual) {
     if (unidade_atual == CODIGO_WATTS && unidade_escolhida == CODIGO_KILOWATTS) {
         return converter_watts_para_kilowatts(valor_atual);
@@ -80,6 +83,7 @@ float conversor_unidade_energia(int unidade_atual, int unidade_escolhida, float 
     }
 }
 
+// Implementador-2. Implementa funções de conversão entre as unidades
 float converter_watts_para_kilowatts(float valor_watts) {
     return valor_watts / KILOWATTS;
 }
