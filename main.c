@@ -1,22 +1,23 @@
 #include <stdio.h>
-#include <locale.h>
-#include "unidadeTemperatura.h"
-#include "unidadeArmazenamento.h"
-#include "volume.h"
+#include <locale.h> // Biblioteca para configurar a localidade (idioma, formato de números, datas, etc.)
+// Incluindo os arquivos de cabeçalho
+#include "unidadeDeArea.h"
+#include "unidadeDeArmazenamento.h"
+#include "unidadeDeComprimento.h"
 #include "unidadeDeMassa.h"
-// #include "comprimento.h"
-// #include "velocidade.h"
-// #include "potencia.h"
-// #include "area.h"
-// #include "tempo.h"
-// #include "dados.h"
-// #include "testes.h"
+#include "UnidadeDePotencia.h"
+#include "unidadeDeTemperatura.h"
+#include "unidadeDeTempo.h"
+#include "unidadeDeVelocidade.h"
+#include "unidadeDeVolume.h"
 
+// Função que apresenta a interface de interação com o usuário
 void interface() {
     int escolha;
 
+    // Loop principal para exibir o menu até o usuário decidir sair
     while (1) {
-        printf("\nSelecione uma categoria para conversão:\n");
+        printf("\nSelecione uma categoria para conversão:\n\n");
         printf("1. Unidades de comprimento\n");
         printf("2. Unidades de massa\n");
         printf("3. Unidades de volume\n");
@@ -27,12 +28,13 @@ void interface() {
         printf("8. Unidades de tempo\n");
         printf("9. Unidades de dados\n");
         printf("0. Sair\n");
-        printf("Escolha uma opção: ");
+        printf("\nEscolha uma opção: ");
         scanf("%d", &escolha);
 
+        // Verifica a opção escolhida pelo usuário e executa a função correspondente
         switch (escolha) {
             case 1:
-                
+                unidades_de_comprimento();
                 break;
             case 2:
                 conversorMassa();
@@ -44,22 +46,19 @@ void interface() {
                 Conversor_Temperatura();
                 break;
             case 5:
-
+                conversorDeVelocidade();
                 break;
             case 6:
-
+                UnidadeDePotencia();
                 break;
             case 7:
-
+                Conversor_De_Area();
                 break;
             case 8:
-
+                conversorTempo();
                 break;
             case 9:
                 unidadeArmazenamento();
-                break;
-            case 10:
-
                 break;
             case 0:
                 printf("Saindo do programa...\n");
@@ -71,7 +70,7 @@ void interface() {
 }
 
 int main() {
-    setlocale(LC_ALL, "");
-    interface();
+    system("chcp 65001 > nul"); // Configura o terminal para usar codificação UTF-8 sem exibir mensagem
+    interface(); // Inicia a interface do programa
     return 0;
 }
