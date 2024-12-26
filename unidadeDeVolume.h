@@ -27,7 +27,7 @@ void converterVolume()
     scanf("%s", valor_str);
 
     // Substituir ',' por '.' na string
-    for (int i = 0; i < strlen(valor_str); i++)
+    for (int i = 0; i < (int)strlen(valor_str); i++)
     {
         if (valor_str[i] == ',')
         {

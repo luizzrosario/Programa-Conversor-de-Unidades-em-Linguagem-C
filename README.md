@@ -79,51 +79,38 @@ A padronização foi um ponto de destaque no projeto. O grupo adotou:
 Com essas práticas, o projeto foi conduzido de forma organizada e alinhada às melhores práticas de desenvolvimento colaborativo.
 
 ---
+
 # Sobre cada conversor
 
+## Unidade de Área
 
-### Unidade de area
+### Introdução
+O conversor de área permite transformar valores entre 14 diferentes unidades de medida. Ele utiliza o metro quadrado (m²) como unidade base, realizando a conversão em duas etapas para garantir a precisão.
 
-O programa é feito utilizado o metro quadrado como base para conversão. Ela é feita em dois passos:
+### Funcionamento Técnico
+1. Multiplica-se o valor da área de origem pelo fator de conversão correspondente, normalizando para metros quadrados.
+   - **Cálculo**:  
+     valorEmMetros = valorOrigem * fatorOrigem
 
-1 - Multiplicamos o valor da área escolhida pelo usuário, pelo fator de conversão correspondente à unidade de origem (exemplo: 1 km² = 1.000.000 m²). Isso normaliza o valor para a unidade base, que é o metro quadrado.
+2. Divide-se o valor em metros quadrados pelo fator da unidade de destino, obtendo o resultado na unidade desejada.
+   - **Cálculo**:  
+     valorConvertido = valorEmMetros / fatorDestino
 
-Valor em metros = valor * fator Origem
+### Execução do Programa
+1. O usuário insere o valor a ser convertido.
+2. Escolhe a unidade de origem dentre 14 opções.
+3. Seleciona a unidade de destino.
+4. O programa exibe o valor convertido e oferece a opção de realizar outra conversão.
 
-O fator origem é o equivalente em metros quadrados de cada unidade do programa.
-
-2 - Para a unidade de destino: Dividimos o valor em metros quadrados pelo fator de conversão correspondente à unidade de destino (exemplo: 1 hectare = 10.000 m²).
-
-Valor Convertido = valor em metros / fator Destino
-
-Isso permite fazer a conversão diretamente com qualquer valor, utilizando o metro quadrado como base.
-
---------Execução do conversão de unidades de Área--------------
-
-1- O usuário escolhe o valor que deseja que seja convertido.
-2 - Escolhe entre as 14 opções de unidade de medida do valor escolhido.
-3 - Escolhe entre as 14 opções da unidade de medida da conversão.
-
-Exemplo:
+### Exemplo de Execução
 ```plaintext
 Bem-vindo ao Conversor de Unidades de Área!
 Escolha uma das opções abaixo:
 1. Metro Quadrado (m²)
 2. Centímetro Quadrado (cm²)
-3. Quilômetro Quadrado (km²)
-4. Hectare (ha)
-5. Decâmetro Quadrado (dam²)
-6. Milímetro Quadrado (mm²)
-7. Polegada Quadrada (in²)
-8. Pé Quadrado (ft²)
-9. Jarda Quadrada (yd²)
-10. Milha Quadrada (mi²)
-11. Acre (ac)
-12. Unidade Astronômica (UA²)
-13. Parsec Quadrado (pc²)
-14. Ano Luz Quadrado (ly²)
+...
 
-Digite o valor da área a ser convertida: 10 
+Digite o valor da área a ser convertida: 10
 Escolha a unidade de origem (1-14): 4
 Escolha a unidade de destino (1-14): 1
 
@@ -133,56 +120,32 @@ Deseja realizar outra conversão? (s/n): n
 Programa encerrado. Obrigado por utilizar o conversor de unidades de área!
 ```
 
-### Unidade de Temparatura
-
-Este programa realiza conversões entre diferentes escalas de temperatura (Celsius, Fahrenheit e Kelvin). Ele utiliza fórmulas matemáticas precisas para transformar os valores fornecidos pelo usuário e apresenta os resultados de forma clara e direta.  
-
----
-#### Como o programa funciona  
-
-1. O programa apresenta um menu com diversas opções de conversão.  
-2. O usuário escolhe o tipo de conversão desejada, insere o valor da temperatura, e o resultado é calculado utilizando a fórmula correspondente.  
-3. O programa pode realizar múltiplas conversões consecutivas até o usuário decidir encerrá-lo.  
-
-#### Fórmulas Utilizadas  
-- **Celsius para Fahrenheit:** \( F = (C \times 1.8) + 32 \)  
-- **Fahrenheit para Celsius:** \( C = \frac{F - 32}{1.8} \)  
-- **Celsius para Kelvin:** \( K = C + 273.15 \)  
-- **Kelvin para Celsius:** \( C = K - 273.15 \)  
-- **Fahrenheit para Kelvin:** \( K = \frac{F - 32}{1.8} + 273.15 \)  
-- **Kelvin para Fahrenheit:** \( F = (K - 273.15) \times 1.8 + 32 \)  
-
 ---
 
-#### Menu de Opções  
+## Unidade de Temperatura
 
-1. Celsius para Fahrenheit  
-2. Fahrenheit para Celsius  
-3. Celsius para Kelvin  
-4. Kelvin para Celsius  
-5. Fahrenheit para Kelvin  
-6. Kelvin para Fahrenheit  
-7. Celsius para Fahrenheit e Kelvin  
-8. Fahrenheit para Celsius e Kelvin  
-9. Kelvin para Celsius e Fahrenheit  
-0. Sair  
+### Introdução
+Este conversor permite transformar valores entre Celsius, Fahrenheit e Kelvin utilizando fórmulas matemáticas precisas.
 
----
+### Funcionamento Técnico
+1. O programa apresenta um menu de opções de conversão.
+2. O usuário escolhe o tipo de conversão desejado e insere o valor da temperatura.
+3. O programa aplica a fórmula correspondente para calcular o resultado:
+   - Celsius para Fahrenheit: F = (C * 1.8) + 32
+   - Fahrenheit para Kelvin: K = (F - 32) / 1.8 + 273.15
+   - (Outras fórmulas semelhantes para cada conversão).
 
-#### Exemplo de Execução  
+### Execução do Programa
+1. O usuário escolhe a conversão desejada no menu.
+2. Insere o valor da temperatura.
+3. O programa exibe o resultado e retorna ao menu principal.
 
+### Exemplo de Execução
 ```plaintext
-Escolha a conversão desejada:  
- 1 => Celsius para Fahrenheit  
- 2 => Fahrenheit para Celsius  
- 3 => Celsius para Kelvin  
- 4 => Kelvin para Celsius  
- 5 => Fahrenheit para Kelvin  
- 6 => Kelvin para Fahrenheit  
- 7 => Celsius para Fahrenheit e Kelvin  
- 8 => Fahrenheit para Celsius e Kelvin  
- 9 => Kelvin para Celsius e Fahrenheit  
- 0 => PARA SAIR  
+Escolha a conversão desejada:
+1. Celsius para Fahrenheit
+2. Fahrenheit para Celsius
+...
 
 Digite o número correspondente: 3
 Digite o valor do grau a converter: 25
@@ -190,45 +153,39 @@ Digite o valor do grau a converter: 25
 A conversão de 'Celsius para Kelvin' é igual a: 298.15 K
 ```
 
-### Unidades de Volume 🚰
+---
 
-Este programa permite converter entre diferentes unidades de volume em três passos, utilizando o **litro** (L) como unidade base.
+## Unidade de Volume
 
-#### Unidades para conversão 🧪
+### Introdução
+O conversor de volume realiza transformações entre diferentes unidades de medida usando o litro (L) como referência base.
 
-Escolha entre as seguintes unidades de volume:
+### Funcionamento Técnico
+1. O valor de origem é convertido para litros usando um fator de conversão.
+   - **Cálculo**:  
+     valorEmLitros = valorOrigem * fatorOrigem
 
-1. Litro (L) 🧃
-2. Metro cúbico (m³) 📦
-3. Mililitro (mL) 💧
+2. O valor em litros é convertido para a unidade de destino.
+   - **Cálculo**:  
+     valorConvertido = valorEmLitros / fatorDestino
 
-#### Como Funciona ⚙️
+### Execução do Programa
+1. O usuário insere o valor que deseja converter.
+2. Escolhe a unidade de origem entre as opções.
+3. Escolhe a unidade de destino entre as opções.
+4. O programa exibe o valor convertido.
 
-1. **Escolha o valor** que deseja converter.
-2. **Selecione a unidade de origem** de uma lista de 3 opções.
-3. **Selecione a unidade de destino** de uma lista de 3 opções.
-4. O programa converte o valor utilizando o **litro (L)** como base e exibe o resultado.
-5. Após a conversão, o programa exibe o menu inicial, e o usuário pode usar qualquer conversor! 😄
-
-#### Exemplo de Execução:
-
+### Exemplo de Execução
 ```plaintext
 Digite o valor: 1250
 Selecione a unidade de origem:
 1 - Litro (L)
 2 - Metro cúbico (m³)
-3 - Mililitro (mL)
-Opção: 3
+...
+
 Selecione a unidade de destino:
 1 - Litro (L)
 2 - Metro cúbico (m³)
-3 - Mililitro (mL)
-Opção: 1
+...
+
 Valor convertido: 1.250000
-```
-
-### Unidades
-=======
-
-### Unidade de ...
-

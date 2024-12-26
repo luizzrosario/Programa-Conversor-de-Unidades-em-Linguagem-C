@@ -7,6 +7,7 @@
 #include "unidadeDeMassa.h"
 #include "unidadeDeTemperatura.h"
 #include "unidadeDeTempo.h"
+#include "unidadeDeVelocidade.h"
 #include "unidadeDeVolume.h"
 
 // Função que apresenta a interface de interação com o usuário
@@ -44,7 +45,7 @@ void interface() {
                 Conversor_Temperatura();
                 break;
             case 5:
-                printf("\n\n\nEm desenvolvimento...\n\n\n");
+                conversorDeVelocidade();
                 break;
             case 6:
                 printf("\n\n\nEm desenvolvimento...\n\n\n");
