@@ -286,3 +286,52 @@ Para qual unidade de potência deseja converter?
 [3] Cavalos-vapor
 Escolha: 2
 O valor convertido é: 1.50
+```
+
+---
+
+## Unidade de Massa
+
+### Introdução
+
+Este módulo é responsável pela conversão das unidades de massa: grama, quilograma e tonelada. Ele utiliza a grama como referência para fazer as conversões.
+
+### Funcionamento Técnico 
+1. **Entrada do Valor**: O usuário insere o valor de massa a ser convertido (`valor_atual`).  
+
+2. **Seleção de Unidades**:  
+   - Escolhe a unidade atual ([1] Grama, [2] Quilograma, [3] Tonelada).  
+   - Escolhe a unidade de destino com o mesmo menu.  
+
+3. **Validação**: As entradas são verificadas com a função `codigo_de_unidade_de_medida_valido`. Entradas inválidas exibem erro e reiniciam o processo.
+
+4. **Cálculo da Conversão**:  
+   - Realiza a conversão usando as relações:  
+     - 1 Tonelada = 1000 Quilogramas = 1.000.000 Gramas  
+     - 1 Quilograma = 1000 Gramas  
+
+5. **Resultado**: Exibe o valor convertido na unidade desejada.
+
+6. **Repetição ou Saída**: O usuário decide se realiza outra conversão ou encerra o programa.
+
+### Exemplo de execução:
+```
+Digite o valor a ser convertido: 5000
+Em qual unidade de massa esse valor está?
+[1] Grama
+[2] Quilograma
+[3] Tonelada
+Escolha: 1
+Em qual unidade de massa você quer converter?
+[1] Grama
+[2] Quilograma
+[3] Tonelada
+Escolha: 2
+Resultado: 5000 Gramas equivalem a 5 Quilogramas.
+Deseja realizar outra conversão?
+[1] Sim
+[2] Não
+Escolha: 2
+```
+
+
