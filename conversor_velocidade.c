@@ -1,5 +1,6 @@
-#include <stdio.h>
+#include "conversor_velocidade.h"
 
+// Função para exibir o menu
 void menu() {
     printf("\nConversor de Velocidade\n");
     printf("1. Km/h para m/s\n");
@@ -10,7 +11,8 @@ void menu() {
     printf("Escolha uma opcao: ");
 }
 
-int main() {
+// Função principal do conversor
+void conversorDeVelocidade() {
     int opcao;
     double velocidade, resultado;
 
@@ -19,42 +21,37 @@ int main() {
         scanf("%d", &opcao);
 
         switch (opcao) {
-            case 1: // Km/h para m/s
+            case 1:
                 printf("Digite a velocidade em Km/h: ");
                 scanf("%lf", &velocidade);
                 resultado = velocidade / 3.6;
                 printf("Velocidade em m/s: %.2lf\n", resultado);
                 break;
-
-            case 2: // m/s para Km/h
+            case 2:
                 printf("Digite a velocidade em m/s: ");
                 scanf("%lf", &velocidade);
                 resultado = velocidade * 3.6;
                 printf("Velocidade em Km/h: %.2lf\n", resultado);
                 break;
-
-            case 3: // Km/h para mph
+            case 3:
                 printf("Digite a velocidade em Km/h: ");
                 scanf("%lf", &velocidade);
-                resultado = velocidade * 0.621371;
+                resultado = velocidade / 1.609;
                 printf("Velocidade em mph: %.2lf\n", resultado);
                 break;
-
-            case 4: // mph para Km/h
+            case 4:
                 printf("Digite a velocidade em mph: ");
                 scanf("%lf", &velocidade);
-                resultado = velocidade / 0.621371;
+                resultado = velocidade * 1.609;
                 printf("Velocidade em Km/h: %.2lf\n", resultado);
                 break;
-
-            case 5: // Sair
-                printf("Encerrando o programa...\n");
+            case 5:
+                printf("Saindo...\n");
                 break;
-
             default:
-                printf("Opcao invalida. Tente novamente.\n");
+                printf("Opcao invalida! Tente novamente.\n");
         }
     } while (opcao != 5);
 
-    return 0;
+    return; // Função void, portanto não retorna nada
 }
