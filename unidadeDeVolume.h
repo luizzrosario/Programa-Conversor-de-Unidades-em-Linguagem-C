@@ -1,39 +1,91 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+int validarNumero(const char *str)
+{
+    char *endptr;
+    double valor = strtod(str, &endptr);
+
+    // Se não conseguiu converter ou sobrou algo na string, é inválido
+    if (*endptr != '\0' || endptr == str || valor <= 0)
+    {
+        return 0; // Número inválido
+    }
+    return 1; // Número válido
+}
 
 void converterVolume()
 {
+    char valor_str[50];
     double valor;
-    char unidade_origem, unidade_destino;
+    int unidade_origem, unidade_destino;
 
+    // Entrada do valor como string para tratar ',' como separador decimal
     printf("Digite o valor: ");
-    scanf("%lf", &valor);
+    scanf("%s", valor_str);
 
-    printf("Digite a unidade de origem (l para litro, m para metro cúbico, M para mililitro): ");
-    scanf(" %c", &unidade_origem);
+    // Substituir ',' por '.' na string
+    for (int i = 0; i < strlen(valor_str); i++)
+    {
+        if (valor_str[i] == ',')
+        {
+            valor_str[i] = '.';
+        }
+    }
 
-    printf("Digite a unidade de destino (l para litro, m para metro cúbico, M para mililitro): ");
-    scanf(" %c", &unidade_destino);
+    // Validar se é um número válido
+    if (!validarNumero(valor_str))
+    {
+        printf("Valor inválido! Digite um número positivo.\n");
+        return;
+    }
+
+    // Converter a string para double
+    valor = atof(valor_str);
+
+    // Menu para unidade de origem
+    printf("Selecione a unidade de origem:\n");
+    printf("1 - Litro (L)\n");
+    printf("2 - Metro cúbico (m³)\n");
+    printf("3 - Mililitro (mL)\n");
+    printf("Opção: ");
+    scanf("%d", &unidade_origem);
+
+    if (unidade_origem < 1 || unidade_origem > 3)
+    {
+        printf("Opção inválida para a unidade de origem!\n");
+        return;
+    }
+
+    // Menu para unidade de destino
+    printf("Selecione a unidade de destino:\n");
+    printf("1 - Litro (L)\n");
+    printf("2 - Metro cúbico (m³)\n");
+    printf("3 - Mililitro (mL)\n");
+    printf("Opção: ");
+    scanf("%d", &unidade_destino);
+
+    if (unidade_destino < 1 || unidade_destino > 3)
+    {
+        printf("Opção inválida para a unidade de destino!\n");
+        return;
+    }
 
     // Convertendo para litro (L) como base
-    if (unidade_origem == 'm')
-        // metro cúbico (m³) para litro
-        valor = valor * 1000;
-    else if (unidade_origem == 'l')
-        // litro (L) já é a base
-        valor = valor;
-    else if (unidade_origem == 'M')
-        // mililitro (mL) para litro
-        valor = valor / 1000;
-        
+    if (unidade_origem == 2)
+        valor *= 1000; // metro cúbico (m³) para litro
+    else if (unidade_origem == 3)
+        valor /= 1000; // mililitro (mL) para litro
+
     // Convertendo de litro (L) para a unidade de destino
-    if (unidade_destino == 'm')
-        // litro (L) para metro cúbico (m³)
-        valor /= 1000;
-    else if (unidade_destino == 'l')
-        // litro (L) para litro (L)
-        valor = valor;
-    else if (unidade_destino == 'M')
-        // litro (L) para mililitro (mL)
-        valor *= 1000;
+    if (unidade_destino == 2)
+        valor /= 1000; // litro (L) para metro cúbico (m³)
+    else if (unidade_destino == 3)
+        valor *= 1000; // litro (L) para mililitro (mL)
+
     printf("Valor convertido: %.6f\n", valor);
+
+    return;
 }
