@@ -17,7 +17,7 @@ O programa contém as seguintes opções:
 3. **Unidades de volume**
 4. **Unidades de temperatura**
 5. **Unidades de velocidade**
-6. **Unidades de potência (no aguardo)**
+6. **Unidades de potência**
 7. **Unidades de área**
 8. **Unidades de tempo**
 9. **Unidades de dados**
@@ -210,3 +210,79 @@ Selecione a unidade de destino:
 
 Valor convertido: 1.250000
 ```
+
+---
+## Unidade De Potência
+
+
+Este módulo é responsável por realizar conversões entre diferentes unidades de potência, como Watts, Kilowatts e Cavalos-vapor. Ele inclui funções bem definidas para garantir uma interação eficiente e intuitiva com o usuário.
+
+---
+
+#### Definições
+- **Watts (W):** Unidade básica de potência no sistema internacional (SI).
+- **Kilowatts (kW):** Unidade equivalente a 1000 Watts.
+- **Cavalos-vapor (CV):** Unidade de potência equivalente a aproximadamente 735,5 Watts.
+
+---
+
+#### Códigos de Unidade
+- `CODIGO_WATTS (1)`: Representa Watts.
+- `CODIGO_KILOWATTS (2)`: Representa Kilowatts.
+- `CODIGO_CAVALOS_VAPOR (3)`: Representa Cavalos-vapor.
+
+---
+
+#### Estrutura do Código
+- **Macros e Definições**
+  - Definição de constantes para simplificar conversões, como `WATTS`, `KILOWATTS` e `CAVALOS_VAPOR`.
+  - Definição de códigos de unidade (`CODIGO_WATTS`, `CODIGO_KILOWATTS`, `CODIGO_CAVALOS_VAPOR`).
+
+- **Função principal**
+  - `UnidadeDePotencia()`: Gerencia a interação com o usuário para entrada de dados, validação e apresentação do resultado da conversão.
+
+- **Validação**
+  - `codigo_de_unidade_potencia_valido(int codigo)`: Valida se o código da unidade é válido (Watts, Kilowatts ou Cavalos-vapor).
+
+- **Conversões Diretas**
+  - `conversor_unidade_potencia(int unidade_atual, int unidade_escolhida, float valor_atual)`: Realiza a conversão entre duas unidades de potência com base no valor informado.
+
+- **Funções Auxiliares**
+  - `converter_watts_para_kilowatts(float valor_watts)`: Converte de Watts para Kilowatts.
+  - `converter_watts_para_cavalos_vapor(float valor_watts)`: Converte de Watts para Cavalos-vapor.
+  - `converter_kilowatts_para_watts(float valor_kilowatts)`: Converte de Kilowatts para Watts.
+  - `converter_kilowatts_para_cavalos_vapor(float valor_kilowatts)`: Converte de Kilowatts para Cavalos-vapor.
+  - `converter_cavalos_vapor_para_watts(float valor_cavalos)`: Converte de Cavalos-vapor para Watts.
+  - `converter_cavalos_vapor_para_kilowatts(float valor_cavalos)`: Converte de Cavalos-vapor para Kilowatts.
+
+---
+
+#### Exemplo de Uso
+A função principal, `UnidadeDePotencia()`, guia o usuário por meio de uma série de etapas para realizar a conversão desejada. 
+
+**Fluxo de execução:**
+1. O usuário insere o valor da potência.
+2. Escolhe a unidade atual do valor inserido:
+   - [1] Watts
+   - [2] Kilowatts
+   - [3] Cavalos-vapor
+3. Escolhe a unidade para a qual deseja converter:
+   - [1] Watts
+   - [2] Kilowatts
+   - [3] Cavalos-vapor
+4. O programa exibe o resultado da conversão.
+
+**Exemplo de execução:**
+```c
+Digite o valor da potência a ser convertido: 1500
+Em qual unidade de potência esse valor está?
+[1] Watts
+[2] Kilowatts
+[3] Cavalos-vapor
+Escolha: 1
+Para qual unidade de potência deseja converter?
+[1] Watts
+[2] Kilowatts
+[3] Cavalos-vapor
+Escolha: 2
+O valor convertido é: 1.50
