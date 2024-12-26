@@ -334,4 +334,38 @@ Deseja realizar outra conversão?
 Escolha: 2
 ```
 
+## Unidade de Comprimento
 
+### Introdução
+
+Este módulo é responsável pela conversão das seguintes unidades de comprimento: metros, centímetros e milímetros.
+
+### Funcionamento Técnico
+
+1. **Entrada da Unidade Atual**: 
+  - O usuário insere o código da unidade de comprimento atual.
+  - O código é validado. 
+    - Código inválido: uma mensagem de erro é mostrada ao usuário e um novo prompt para a entrada do código é gerado. 
+
+2. **Entrada da Unidade Final**: 
+  - O usuário insere o código da unidade de comprimento final.
+  - O código é validado. 
+    - Código inválido: uma mensagem de erro é mostrada ao usuário e um novo prompt para a entrada do código é gerado. 
+
+3. **Entrada da Valor**:  
+  - O usuário insere o valor que será convertido. 
+  - O valor é validado.
+    - Código inválido: uma mensagem de erro é mostrada ao usuário e um novo prompt para a entrada do valor é gerado. 
+
+4. **Saída do Valor**: O valor convertido é impresso na tela. 
+
+### Exemplo de execução:
+
+[1] Metro (m)
+[2] Centimetro (cm)
+[3] Milimetro (mm)
+[4] Voltar ao menu principal
+Digite o numero da unidade atual: 1
+Digite o numero da unidade final: 3
+Digite o valor para conversao: 1
+Valor convertido : 1000.00
