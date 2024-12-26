@@ -109,3 +109,4 @@ float converter_cavalos_vapor_para_kilowatts(float valor_cavalos) {
     float valor_watts = converter_cavalos_vapor_para_watts(valor_cavalos);
     return converter_watts_para_kilowatts(valor_watts);
 }
+
