@@ -79,3 +79,29 @@ float conversor_unidade_energia(int unidade_atual, int unidade_escolhida, float 
         return valor_atual; // Caso a unidade inicial e final sejam iguais
     }
 }
+
+float converter_watts_para_kilowatts(float valor_watts) {
+    return valor_watts / KILOWATTS;
+}
+
+float converter_watts_para_cavalos_vapor(float valor_watts) {
+    return valor_watts / CAVALOS_VAPOR;
+}
+
+float converter_kilowatts_para_watts(float valor_kilowatts) {
+    return valor_kilowatts * KILOWATTS;
+}
+
+float converter_kilowatts_para_cavalos_vapor(float valor_kilowatts) {
+    float valor_watts = converter_kilowatts_para_watts(valor_kilowatts);
+    return converter_watts_para_cavalos_vapor(valor_watts);
+}
+
+float converter_cavalos_vapor_para_watts(float valor_cavalos) {
+    return valor_cavalos * CAVALOS_VAPOR;
+}
+
+float converter_cavalos_vapor_para_kilowatts(float valor_cavalos) {
+    float valor_watts = converter_cavalos_vapor_para_watts(valor_cavalos);
+    return converter_watts_para_kilowatts(valor_watts);
+}
