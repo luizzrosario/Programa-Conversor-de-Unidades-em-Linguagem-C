@@ -49,3 +49,15 @@ void conversorEnergia() {
         scanf("%d", &sair);
     } while (sair != 1);
 }
+
+int codigo_de_unidade_energia_valido(int codigo) {
+    switch (codigo) {
+        case CODIGO_WATTS:
+        case CODIGO_KILOWATTS:
+        case CODIGO_CAVALOS_VAPOR:
+            return 1;
+        default:
+            return 0;
+    }
+}
+
